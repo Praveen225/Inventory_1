@@ -6,7 +6,10 @@
 			"name": "Surya",
 			"designation":"HR",
 			"email":"surya12@gmail.com",
-			"phoneno":"7875645423"
+			"phoneno":"7875645423",
+			"sysNo":"SDFEA21212344A",
+			"dos":"02-10-2016",
+			"totIssues":"3"
 		}, {
 			"name": "Poornima",
 			"id": "SE0001",
@@ -17,7 +20,10 @@
 			"age": "24",
 			"dob": "08/09/1994",
 			"phoneno": "8947635465",
-			"email": "poornima@gmail.com"
+			"email": "poornima@gmail.com",
+			"sysNo":"SDFEA21212344A",
+			"dos":"01-09-2018",
+			"totIssues":"2"
 		}, {
 			"name": "Praveen",
 			"id": "SE0002",
@@ -28,7 +34,10 @@
 			"age": "23",
 			"dob": "07/04/1995",
 			"phoneno": "7654635647",
-			"email": "praveenreddy@gmail.com"
+			"email": "praveenreddy@gmail.com",
+			"sysNo":"SDFEA21212344A",
+			"dos":"07-11-2018",
+			"totIssues":"3"
 		}, {
 			"name": "Dolly",
 			"id": "SE0003",
@@ -39,7 +48,10 @@
 			"age": "24",
 			"dob": "08/09/1994",
 			"phoneno": "8748576867",
-			"email": "dolly@gmail.com"
+			"email": "dolly@gmail.com",
+			"sysNo":"SXASWQ12345mj",
+			"dos":"02-10-2018",
+			"totIssues":"7"
 		}, {
 			"name": "Raghu",
 			"id": "SE0004",
@@ -50,7 +62,10 @@
 			"age": "26",
 			"dob": "17/10/1992",
 			"phoneno": "8576859384",
-			"email": "raghu@gmail.com"
+			"email": "raghu@gmail.com",
+			"sysNo":"ZWSER12345kj",
+			"dos":"10-10-2015",
+			"totIssues":"1"
 		}, {
 			"name": "kiranmai",
 			"id": "SE0005",
@@ -61,7 +76,10 @@
 			"age": "21",
 			"dob": "17/10/1998",
 			"phoneno": "9837465837",
-			"email": "kiranmai@gmail.com"
+			"email": "kiranmai@gmail.com",
+			"sysNo":"AEWQ12345233N",
+			"dos":"20-01-2017",
+			"totIssues":"5"
 		}
 
 	],
