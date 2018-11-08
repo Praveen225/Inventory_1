@@ -1,0 +1,90 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="inventory.Inventory.controller.notifications"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:layout="sap.ui.layout" xmlns:tnt="sap.tnt" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form">
+	<tnt:ToolHeader>
+		<Image src="http://1.bp.blogspot.com/-GBhaM8-qOxM/VOIzf8pwwDI/AAAAAAAAABQ/DktIHaplSrc/s1600/banner.png" width="100px" height="50px"/>
+		<ToolbarSpacer>
+			<layoutData>
+				<OverflowToolbarLayoutData priority="NeverOverflow" minWidth="10px"/>
+			</layoutData>
+		</ToolbarSpacer>
+		<tnt:ToolHeaderUtilitySeparator/>
+		<ToolbarSpacer>
+			<layoutData>
+				<OverflowToolbarLayoutData priority="NeverOverflow" minWidth="20px"/>
+			</layoutData>
+		</ToolbarSpacer>
+		<Button icon="sap-icon://log" type="Transparent">
+			<layoutData>
+				<OverflowToolbarLayoutData priority="NeverOverflow"/>
+			</layoutData>
+		</Button>
+	</tnt:ToolHeader>
+	<f:FlexibleColumnLayout backgroundDesign="Transparent" layout="OneColumn" id="idFlexibleColumn">
+		<f:beginColumnPages>
+			<Page showHeader="false" showFooter="false" id="beginPage">
+				<content>
+					<List items="{/notifications}" headerText="Employee Names" id="notfList" includeItemInSelection="true" itemPress="onEventPress"
+						mode="SingleSelectMaster">
+						<headerToolbar>
+							<Toolbar>
+								<ToolbarSpacer/>
+								<SearchField width="40%" liveChange="onSearch" id="input"/>
+							</Toolbar>
+						</headerToolbar>
+						<items >
+							<ObjectListItem title="{eIssue}" number="Ticket No:" numberUnit="{tNo}" type="Navigation">
+								<attributes>
+									<ObjectAttribute text="{eId}"/>
+									<ObjectAttribute text="{date}"/>
+								</attributes>
+							</ObjectListItem>
+						</items>
+					</List>
+				</content>
+				<footer height="20px" visible="false">
+					<Toolbar class="bFooter"></Toolbar>
+				</footer>
+			</Page>
+		</f:beginColumnPages>
+		<f:midColumnPages >
+			<Page title="Notification Details">
+				<Toolbar>
+					<ToolbarSpacer/>
+					<Button icon="sap-icon://decline" type="Transparent" press="onClosingDetail"></Button>
+					<!--<core:Icon src="sap-icon://decline" class="sapUiMediumMargin"/>-->
+				</Toolbar>
+				<content>
+					<form:SimpleForm id="SimpleFormChange3" editable="false" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4"
+						labelSpanS="12" adjustLabelSpan="false" emptySpanXL="1" emptySpanL="2" emptySpanM="1" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1"
+						singleContainerFullSize="false">
+						<form:content>
+							<Label text="{i18n>tNo}" class="sapUiTinyMargin"/>
+							<Text text="{data>/notiData/tNo}" class="sapUiTinyMargin"/>
+							<Label text="{i18n>emId}" class="sapUiTinyMargin"/>
+							<Text text="{data>/notiData/eId}" class="sapUiTinyMargin"/>
+							<Label text="{i18n>eName}" class="sapUiTinyMargin"/>
+							<Text text="{data>/notiData/eName}" class="sapUiTinyMargin"/>
+							<Label text="{i18n>issue}" class="sapUiTinyMargin"/>
+							<Text text="{data>/notiData/eIssue}" class="sapUiTinyMargin"/>
+							<Label text="{i18n>eDec}" class="sapUiTinyMargin"/>
+							<Text text="{data>/notiData/eDec}" class="sapUiTinyMargin"/>
+							<Label text="{i18n>date}" class="sapUiTinyMargin"/>
+							<Text text="{data>/notiData/date}" class="sapUiTinyMargin"/>
+							<Label text="{i18n>tlSta}" class="sapUiTinyMargin"/>
+							<Text text="{data>/notiData/tlStatus}" class="sapUiTinyMargin"/>
+							<Label text="{i18n>tlDec}" class="sapUiTinyMargin"/>
+							<Text text="{data>/notiData/tlDec}" class="sapUiTinyMargin"/>
+						</form:content>
+					</form:SimpleForm>
+				</content>
+				<footer height="20px">
+					<Toolbar class="bFooter">
+						<ToolbarSpacer/>
+						<Button text="Accept"></Button>
+						<Button text="Reject" press="onReject"></Button>
+					</Toolbar>
+				</footer>
+			</Page>
+		</f:midColumnPages>
+	</f:FlexibleColumnLayout>
+</mvc:View>

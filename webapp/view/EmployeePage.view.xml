@@ -1,0 +1,81 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="inventory.Inventory.controller.EmployeePage"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:tnt="sap.tnt" xmlns:o="sap.uxap" xmlns:layout="sap.ui.layout"
+	xmlns:forms="sap.ui.layout.form">
+	<tnt:ToolHeader>
+		<Image src="http://1.bp.blogspot.com/-GBhaM8-qOxM/VOIzf8pwwDI/AAAAAAAAABQ/DktIHaplSrc/s1600/banner.png" width="100px" height="50px"/>
+		<ToolbarSpacer>
+			<layoutData>
+				<OverflowToolbarLayoutData priority="NeverOverflow" minWidth="10px"/>
+			</layoutData>
+		</ToolbarSpacer>
+		<Button text="{i18n>employee}" type="Transparent">
+			<layoutData>
+				<OverflowToolbarLayoutData priority="Low"/>
+			</layoutData>
+		</Button>
+		<tnt:ToolHeaderUtilitySeparator/>
+		<ToolbarSpacer>
+			<layoutData>
+				<OverflowToolbarLayoutData priority="NeverOverflow" minWidth="20px"/>
+			</layoutData>
+		</ToolbarSpacer>
+		<Button icon="sap-icon://log" type="Transparent" press="onLogout">
+			<layoutData>
+				<OverflowToolbarLayoutData priority="NeverOverflow"/>
+			</layoutData>
+		</Button>
+	</tnt:ToolHeader>
+	<Page showHeader="false">
+		<content>
+			<o:ObjectPageLayout >
+				<o:headerTitle>
+					<o:ObjectPageHeader objectImageURI="{image}" objectTitle="{name}" objectImageShape="Circle" objectImageAlt="{name}"
+						isObjectIconAlwaysVisible="true" objectSubtitle="{designation}">
+						<o:actions>
+							<o:ObjectPageHeaderActionButton id="status_Button" icon="sap-icon://order-status" type="Emphasized" tooltip="{i18n>status}"
+								press="onPressStatus"/>
+						</o:actions>
+					</o:ObjectPageHeader>
+				</o:headerTitle>
+				<o:headerContent>
+					<layout:VerticalLayout>
+						<Label text="{phoneno}"/>
+						<Link text="{email}"/>
+						<Link text="{id}" id="Id"/>
+					</layout:VerticalLayout>
+					<!--<layout:VerticalLayout>
+				
+				
+			</layout:VerticalLayout>-->
+				</o:headerContent>
+				<o:sections>
+					<o:ObjectPageSection>
+						<o:ObjectPageSubSection id="paymentSubSection" title="Complaints">
+							<!--<o:blocks>-->
+							<forms:SimpleForm editable="true" id="ComplaisId" labelSpanL="8" labelSpanM="2" labelSpanS="2" adjustLabelSpan="false" emptySpanXL="1 "
+								emptySpanL="1" emptySpanM="1" emptySpanS="0" columnsXL="4" layout="ResponsiveLayout" columnsL="3" columnsM="2">
+								<Label text="Issue" width="300px"/>
+								<ComboBox items="{ path: 'data>/issues' }" selectedItem="Issue" change="onChange" width="300px">
+									<core:Item key="{data>issue}" text="{data>issue}"/>
+								</ComboBox>
+								<Label text="Description" width="300px"/>
+								<TextArea cols="40" rows="5" width="300px" id="desId"/>
+								<Label text="date" width="300px"/>
+								<DatePicker id="DP2" valueFormat="yyyy-MM-dd" displayFormat="long" change="handleChange" class="sapUiSmallMarginBottom" width="300px"/>
+								<Label/>
+								<!--<Button type="Accept" text="Submit" press="onSubmit"/>-->
+							</forms:SimpleForm>
+						</o:ObjectPageSubSection>
+					</o:ObjectPageSection>
+				</o:sections>
+			</o:ObjectPageLayout>
+		</content>
+		<footer class="margin" style="margin-bottom: 100px">
+			<Bar class="idEmpFooter" >
+				<contentRight>
+					<Button type="Accept" text="Submit" press="onSubmit"></Button>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

@@ -1,0 +1,39 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+	<Dialog id="idIssueDetailsDialog" title="System Details">
+		<Toolbar>
+			<ToolbarSpacer/>
+			<SearchField width="40%" liveChange="onSearchByTno" id="input1"/>
+		</Toolbar>
+		<Table id="idIssueDetailsTable" items="{data>/empInfo}">
+			<columns>
+				<Column hAlign="Center">
+					<Text text="{i18n>eid}"/>
+				</Column>
+				<Column hAlign="Center">
+					<Text text="{i18n>ticNo}"/>
+				</Column>
+				<Column hAlign="Center">
+					<Text text="{i18n>tlStatus}"/>
+				</Column>
+				<Column hAlign="Center">
+					<Text text="{i18n>hrStatus}"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem>
+					<cells>
+						<Text text="{data>id}"/>
+						<Text text=""/>
+						<Text text=""/>
+						<Text text=""/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<beginButton>
+			<Button text="OK" press="onIssueDetailsDialogClose"/>
+		</beginButton>
+	</Dialog>
+</core:FragmentDefinition>
