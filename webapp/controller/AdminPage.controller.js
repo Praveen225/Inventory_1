@@ -66,6 +66,10 @@ sap.ui.define([
 			}
 
 			this._oPopover.openBy(oEvent.getSource());
+		},
+		onLogout: function () {
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("login");
 		}
 	});
 

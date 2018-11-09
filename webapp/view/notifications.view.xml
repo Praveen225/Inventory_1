@@ -13,7 +13,7 @@
 				<OverflowToolbarLayoutData priority="NeverOverflow" minWidth="20px"/>
 			</layoutData>
 		</ToolbarSpacer>
-		<Button icon="sap-icon://log" type="Transparent">
+		<Button icon="sap-icon://log" type="Transparent" press="onLogout">
 			<layoutData>
 				<OverflowToolbarLayoutData priority="NeverOverflow"/>
 			</layoutData>
@@ -23,7 +23,7 @@
 		<f:beginColumnPages>
 			<Page showHeader="false" showFooter="false" id="beginPage">
 				<content>
-					<List items="{/notifications}" headerText="Employee Names" id="notfList" includeItemInSelection="true" itemPress="onEventPress"
+					<List items="{data>/allData}" headerText="Employee Names" id="notfList" includeItemInSelection="true" itemPress="onEventPress"
 						mode="SingleSelectMaster">
 						<headerToolbar>
 							<Toolbar>
@@ -32,10 +32,10 @@
 							</Toolbar>
 						</headerToolbar>
 						<items >
-							<ObjectListItem title="{eIssue}" number="Ticket No:" numberUnit="{tNo}" type="Navigation">
+							<ObjectListItem title="{data>issue}" number="Ticket No:" numberUnit="{data>ticketNo}" type="Navigation">
 								<attributes>
-									<ObjectAttribute text="{eId}"/>
-									<ObjectAttribute text="{date}"/>
+									<ObjectAttribute text="{data>id}"/>
+									<ObjectAttribute text="{data>Date}"/>
 								</attributes>
 							</ObjectListItem>
 						</items>
@@ -59,17 +59,17 @@
 						singleContainerFullSize="false">
 						<form:content>
 							<Label text="{i18n>tNo}" class="sapUiTinyMargin"/>
-							<Text text="{data>/notiData/tNo}" class="sapUiTinyMargin"/>
+							<Text text="{data>/notiData/ticketNo}" class="sapUiTinyMargin"/>
 							<Label text="{i18n>emId}" class="sapUiTinyMargin"/>
-							<Text text="{data>/notiData/eId}" class="sapUiTinyMargin"/>
+							<Text text="{data>/notiData/id}" class="sapUiTinyMargin"/>
 							<Label text="{i18n>eName}" class="sapUiTinyMargin"/>
-							<Text text="{data>/notiData/eName}" class="sapUiTinyMargin"/>
+							<Text text="{data>/notiData/name}" class="sapUiTinyMargin"/>
 							<Label text="{i18n>issue}" class="sapUiTinyMargin"/>
-							<Text text="{data>/notiData/eIssue}" class="sapUiTinyMargin"/>
+							<Text text="{data>/notiData/issue}" class="sapUiTinyMargin"/>
 							<Label text="{i18n>eDec}" class="sapUiTinyMargin"/>
-							<Text text="{data>/notiData/eDec}" class="sapUiTinyMargin"/>
+							<Text text="{data>/notiData/description}" class="sapUiTinyMargin"/>
 							<Label text="{i18n>date}" class="sapUiTinyMargin"/>
-							<Text text="{data>/notiData/date}" class="sapUiTinyMargin"/>
+							<Text text="{data>/notiData/Date}" class="sapUiTinyMargin"/>
 							<Label text="{i18n>tlSta}" class="sapUiTinyMargin"/>
 							<Text text="{data>/notiData/tlStatus}" class="sapUiTinyMargin"/>
 							<Label text="{i18n>tlDec}" class="sapUiTinyMargin"/>
@@ -80,8 +80,8 @@
 				<footer height="20px">
 					<Toolbar class="bFooter">
 						<ToolbarSpacer/>
-						<Button text="Accept"></Button>
-						<Button text="Reject" press="onReject"></Button>
+						<Button text="Accept" enabled="{data>/notiData/enable}"></Button>
+						<Button text="Reject" press="onReject" enabled="{data>/notiData/enable}"></Button>
 					</Toolbar>
 				</footer>
 			</Page>

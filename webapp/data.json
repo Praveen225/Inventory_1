@@ -879,7 +879,8 @@
 		"tlInprocess": "sap-icon://status-in-process",
 		"tlInprocessText": "Tl Inprocess",
 		"hrWaitins": "sap-icon://lateness",
-		"hrWaitingText": "HR Waiting"
+		"hrWaitingText": "HR Waiting",
+		"enable": false
 	}, {
 		"id": "SE0002",
 		"ticketNo": "8798734231",
@@ -892,7 +893,8 @@
 		"tlInprocess": "sap-icon://status-in-process",
 		"tlInprocessText": "Tl Inprocess",
 		"hrWaitins": "sap-icon://lateness",
-		"hrWaitingText": "HR Waiting"
+		"hrWaitingText": "HR Waiting",
+		"enable":false
 	}, {
 		"id": "SE0002",
 		"ticketNo": "6736454657",
@@ -905,7 +907,8 @@
 		"tlInprocess": "sap-icon://status-in-process",
 		"tlInprocessText": "Tl Inprocess",
 		"hrWaitins": "sap-icon://lateness",
-		"hrWaitingText": "HR Waiting"
+		"hrWaitingText": "HR Waiting",
+		"enable":false
 	}, {
 		"id": "SE0003",
 		"ticketNo": "5463234232",
@@ -918,7 +921,8 @@
 		"tlInprocess": "sap-icon://status-in-process",
 		"tlInprocessText": "Tl Inprocess",
 		"hrWaitins": "sap-icon://lateness",
-		"hrWaitingText": "HR Waiting"
+		"hrWaitingText": "HR Waiting",
+		"enable":false
 	}, {
 		"id": "SE0001",
 		"ticketNo": "5436544232",
@@ -931,7 +935,8 @@
 		"tlInprocess": "sap-icon://status-in-process",
 		"tlInprocessText": "Tl Inprocess",
 		"hrWaitins": "sap-icon://lateness",
-		"hrWaitingText": "HR Waiting"
+		"hrWaitingText": "HR Waiting",
+		"enable":false
 	}, {
 		"id": "SE0003",
 		"ticketNo": "4321567232",
@@ -944,7 +949,8 @@
 		"tlInprocess": "sap-icon://status-in-process",
 		"tlInprocessText": "Tl Inprocess",
 		"hrWaitins": "sap-icon://lateness",
-		"hrWaitingText": "HR Waiting"
+		"hrWaitingText": "HR Waiting",
+		"enable":false
 	}, {
 		"id": "SE0004",
 		"ticketNo": "9876789065",
@@ -957,7 +963,8 @@
 		"tlInprocess": "sap-icon://status-in-process",
 		"tlInprocessText": "Tl Inprocess",
 		"hrWaitins": "sap-icon://lateness",
-		"hrWaitingText": "HR Waiting"
+		"hrWaitingText": "HR Waiting",
+		"enable":false
 	}],
 	"processFlow": [{
 		"tlInprocess": "sap-icon://status-in-process",

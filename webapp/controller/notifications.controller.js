@@ -15,7 +15,7 @@ sap.ui.define([
 		onEventPress: function (oEvent) {
 			var twoColumn = this.getView().byId("idFlexibleColumn");
 			twoColumn.setLayout(sap.f.LayoutType.TwoColumnsMidExpanded);
-			var obj = oEvent.getParameters().listItem.getBindingContext().getObject(),
+			var obj = oEvent.getParameters().listItem.getBindingContext("data").getObject(),
 			jmodel = this.getView().getModel("data");
 			jmodel.setProperty("/notiData", obj);
 			this.getView().byId("beginPage").setShowFooter(true);
@@ -46,6 +46,10 @@ sap.ui.define([
 		},
 		onHrRejectClose: function(){
 			this.getView().byId("idHrDialog").close();
+		},
+		onLogout: function () {
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("login");
 		}
 
 	});

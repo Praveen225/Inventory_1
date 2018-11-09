@@ -73,22 +73,22 @@ sap.ui.define([
 			var tcNo = this.obj.ticketNo;
 			var id = this.obj.id;
 			var ctid = this.getView().getModel("data").getProperty("/status/0/" + id);
+
 			var notif = this.getView().getModel("data").getProperty("/status/0/" + id);
+			var alldata= this.getView().getModel("data").getProperty("/allData/");
 			for (var i = 0; i < ctid.length; i++) {
 				if (ctid[i].ticketNo === tcNo) {
-
 					this.getView().getModel("data").setProperty("/status/0/" + id + "/" + i + "/tlInprocess", "sap-icon://accept");
 					this.getView().getModel("data").setProperty("/status/0/" + id + "/" + i + "/tlInprocessText", "TL Accepted");
 					this.getView().getModel("data").setProperty("/status/0/" + id + "/" + i + "/hrWaitins", "sap-icon://status-in-process");
 					this.getView().getModel("data").setProperty("/status/0/" + id + "/" + i + "/hrWaitingText", "HR Inprocess");
 				}
 			}
-			/*if(){
-				
-			}*/
-
+			for(var j=0;j<alldata.length;j++){
+					if(alldata[j].ticketNo===tcNo){
+						this.getView().getModel("data").setProperty("/allData/"+j+"/enable",true);
+					}
+				}
 		}
-
 	});
-
 });
