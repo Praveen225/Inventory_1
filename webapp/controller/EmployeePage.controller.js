@@ -57,6 +57,7 @@ sap.ui.define([
 			var waiting="sap-icon://lateness";
 			var TlInprocess="Tl Inprocess";
 			var HRWaiting="HR Waiting";
+			var enable=false;
 			this.obj = {
 				issue: this.comboValue,
 				description: empDescription,
@@ -68,7 +69,8 @@ sap.ui.define([
 				tlInprocess:inprocess,
                 tlInprocessText:TlInprocess,
                 hrWaitins:waiting,
-               hrWaitingText:HRWaiting
+               hrWaitingText:HRWaiting,
+               enable:enable
 			};
 			var myArray = [];
 			var newData = [];
