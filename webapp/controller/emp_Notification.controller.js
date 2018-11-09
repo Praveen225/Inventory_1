@@ -73,6 +73,7 @@ sap.ui.define([
 			var tcNo = this.obj.ticketNo;
 			var id = this.obj.id;
 			var ctid = this.getView().getModel("data").getProperty("/status/0/" + id);
+			var notif = this.getView().getModel("data").getProperty("/status/0/" + id);
 			for (var i = 0; i < ctid.length; i++) {
 				if (ctid[i].ticketNo === tcNo) {
 
