@@ -1,6 +1,6 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="inventory.Inventory.controller.StatusPage"
 	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:semantic="sap.m.semantic" xmlns:f="sap.ui.layout.form" xmlns:tnt="sap.tnt"
-	xmlns:o="sap.uxap" xmlns:layout="sap.ui.layout">
+	xmlns:o="sap.uxap" xmlns:layout="sap.ui.layout" xmlns:pf="sap.suite.ui.commons">
 	<App>
 		<pages>
 			<SplitContainer>
@@ -40,10 +40,16 @@
 									<Text text="{data>/odata/issue}"/>
 									<Label text="Description"/>
 									<Text text="{data>/odata/description}"/>
-									<Label text="Status"/>
-									<Text text="{data>/odata/status}"/>
 									<Label text="Date"/>
 									<Text text="{data>/odata/Date}"/>
+									<Label text="Status"/>
+									<!--<Text text="{data>/odata/status}"/>-->
+									<pf:ProcessFlow>
+										<pf:lanes>
+											<pf:ProcessFlowLaneHeader iconSrc="{data>/odata/tlInprocess}" text="{data>/odata/tlInprocessText}" position="0" id="idTlStatus"/>
+											<pf:ProcessFlowLaneHeader iconSrc="{data>/odata/hrWaitins}" text="{data>/odata/hrWaitingText}" position="1" id="idHrStatus"/>
+										</pf:lanes>
+									</pf:ProcessFlow>
 								</f:content>
 							</f:SimpleForm>
 							<f:SimpleForm id="emptyId">

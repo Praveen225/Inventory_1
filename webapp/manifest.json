@@ -118,6 +118,12 @@
 					"pattern": "Notifications",
 					"target": "notifications"
 				}
+				,
+				{
+					"name": "emp_Notification",
+					"pattern": "emp_Notification",
+					"target": "emp_Notification"
+				}
 			],
 			"targets": {
 				"Targetlogin": {
@@ -162,16 +168,19 @@
 					"clearControlAggregation": false
 				},
 				"issueStatics": {
-					"viewName":"issueStatics",
-                    "viewType": "XML",
-                    "viewId":"statics"
+					"viewName": "issueStatics",
+					"viewType": "XML",
+					"viewId": "statics"
 				},
 				"notifications": {
-					"viewName":"notifications",
-                    "viewType": "XML",
-                    "viewId":"notifications"
+					"viewName": "notifications",
+					"viewType": "XML",
+					"viewId": "notifications"
+				},
+				"emp_Notification": {
+					"viewType": "XML",
+					"viewName": "emp_Notification"
 				}
-			
 			}
 		}
 	}
