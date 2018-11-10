@@ -133,9 +133,6 @@
 	}, {
 		"issue": "Others"
 	}],
-
-	"selectedKey": 1,
-
 	"status": [{
 		"SE0001": [{
 			"id": "SE0001",
@@ -909,14 +906,8 @@
 		"hrWaitins": "sap-icon://lateness",
 		"hrWaitingText": "HR Waiting",
 		"enable": false,
-<<<<<<< HEAD
 		"tlRejDec": "",
 		"visible": false
-=======
-		"tlRejDec":"",
-		"visible":false
-		
->>>>>>> refs/heads/master
 	}, {
 		"id": "SE0002",
 		"ticketNo": "8798734231",
