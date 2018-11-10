@@ -58,6 +58,7 @@ sap.ui.define([
 			var TlInprocess="Tl Inprocess";
 			var HRWaiting="HR Waiting";
 			var enable=false;
+			var rejDec="";
 			this.obj = {
 				issue: this.comboValue,
 				description: empDescription,
@@ -70,7 +71,9 @@ sap.ui.define([
                 tlInprocessText:TlInprocess,
                 hrWaitins:waiting,
                hrWaitingText:HRWaiting,
-               enable:enable
+               enable:enable,
+	        	tlRejDec:rejDec,
+	        	visible:false
 			};
 			var myArray = [];
 			var newData = [];

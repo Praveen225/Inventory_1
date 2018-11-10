@@ -18,15 +18,25 @@ sap.ui.define([
 
 		onReject: function () {
 			var oView = this.getView();
-			var oDialog = oView.byId("idHrDialog");
+			var oDialog = oView.byId("idTlDialog");
 			if (!oDialog) {
-				oDialog = sap.ui.xmlfragment(oView.getId(), "inventory.Inventory.view.hrRejectDescription", this);
+				oDialog = sap.ui.xmlfragment(oView.getId(), "inventory.Inventory.view.tlDescription", this);
 				oView.addDependent(oDialog);
 			}
 			oDialog.open();
 		},
-		onHrRejectClose: function () {
-			this.getView().byId("idHrDialog").close();
+		onTlRejectClose: function () {
+			this.getView().byId("idTlDialog").close();
+			var alldata = this.getView().getModel("data").getProperty("/allData/");
+           var tcNo = this.obj.ticketNo;
+			this.decTa=this.getView().byId("idTlRejDec").getProperty("value");
+			for (var k = 0; k < alldata.length; k++) {
+				if (alldata[k].ticketNo === tcNo) {
+					this.getView().getModel("data").setProperty("/allData/" + k + "/tlRejDec", this.decTa);
+					this.getView().getModel("data").setProperty("/allData/" + k + "/visible", true);
+				}
+			}
+			
 		},
 		onClick: function (oEvent) {
 			window.history.go(-1);
@@ -105,6 +115,7 @@ sap.ui.define([
 				if (alldata[j].ticketNo === tcNo) {
 					this.getView().getModel("data").setProperty("/allData/" + j + "/enable", true);
 					this.getView().getModel("data").setProperty("/allData/" + j + "/tlInprocessText", "TL Accepted");
+					this.getView().getModel("data").setProperty("/allData/" + j + "/tlRejDec", true);
 					
 				}
 			}
