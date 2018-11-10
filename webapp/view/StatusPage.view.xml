@@ -42,7 +42,7 @@
 									<Text text="{data>/odata/description}"/>
 									<Label text="Date"/>
 									<Text text="{data>/odata/Date}"/>
-									<Label text="Status"/>
+									<Label text="Status" class="sapUiMediumMarginTop"/>
 									<!--<Text text="{data>/odata/status}"/>-->
 									<pf:ProcessFlow>
 										<pf:lanes>

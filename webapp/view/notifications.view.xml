@@ -71,7 +71,7 @@
 							<Label text="{i18n>date}" class="sapUiTinyMargin"/>
 							<Text text="{data>/notiData/Date}" class="sapUiTinyMargin"/>
 							<Label text="{i18n>tlSta}" class="sapUiTinyMargin"/>
-							<Text text="{data>/notiData/tlStatus}" class="sapUiTinyMargin"/>
+							<Text text="{data>/notiData/tlInprocessText}" class="sapUiTinyMargin"/>
 							<Label text="{i18n>tlDec}" class="sapUiTinyMargin"/>
 							<Text text="{data>/notiData/tlDec}" class="sapUiTinyMargin"/>
 						</form:content>
@@ -80,7 +80,7 @@
 				<footer height="20px">
 					<Toolbar class="bFooter">
 						<ToolbarSpacer/>
-						<Button text="Accept" enabled="{data>/notiData/enable}"></Button>
+						<Button text="Accept" enabled="{data>/notiData/enable}" press="onHrAccept"></Button>
 						<Button text="Reject" press="onReject" enabled="{data>/notiData/enable}"></Button>
 					</Toolbar>
 				</footer>
