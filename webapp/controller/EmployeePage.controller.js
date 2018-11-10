@@ -3,24 +3,11 @@ sap.ui.define([
 	"sap/m/MessageToast"
 ], function (Controller, MessageToast) {
 	"use strict";
-
 	return Controller.extend("inventory.Inventory.controller.EmployeePage", {
-
 		onInit: function () {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.getRoute("EmployeePage").attachMatched(this._onObjectMatched, this);
-			/*var desig = this.getView().byId("desig").getValue();
-			if(desig === "Team Lead"){
-				this.getView().byId("bell").setVisible(true);
-			}*/
 		},
-		/*onAfterRendering: function(){
-		var desig = this.getView().byId("desig").getValue();
-			if(desig === "Team Lead"){
-				this.getView().byId("bell").setVisible(true);
-			}	
-		},*/
-
 		_onObjectMatched: function (oEvent) {
 			var oArg = oEvent.getParameters("arguments");
 			var oView = this.getView();
@@ -38,7 +25,6 @@ sap.ui.define([
 			oRouter.navTo("StatusPage", {
 				obj: id
 			});
-
 		},
 		reset: function () {
 			this.getView().byId("desId").setValue("");
@@ -108,23 +94,11 @@ sap.ui.define([
 		onLogout: function () {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("login");
+			this.getView().byId("bell").setVisible(false);
 		},
 		empNotification: function () {
-			/*var path = this.getView().getBindingContext().sPath.substring();
-			var index = path.substring(path.lastIndexOf('/') + 1);
-			var oModel = this.getView().getParent().getModel("data").oData.empInfo;
-			for (var i = 0; i < oModel.length; i++) {
-				if (oModel[i].id === index) {
-					var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-					oRouter.navTo("emp_Notification", {
-						obj: i
-					});
-				}
-			}*/
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("emp_Notification");
 		}
-
 	});
-
 });
