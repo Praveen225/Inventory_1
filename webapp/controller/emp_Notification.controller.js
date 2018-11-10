@@ -30,17 +30,17 @@ sap.ui.define([
 		},
 		onClick: function (oEvent) {
 			window.history.go(-1);
-		/*	var path = this.getView().getBindingContext().sPath.substring();   
-			var index = path.substring(path.lastIndexOf('/') + 1);
-			var oModel = this.getView().getParent().getModel("data").oData.empInfo;
-			for (var i = 0; i < oModel.length; i++) {
-				if (oModel[i].id === index) {
-					var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-					oRouter.navTo("EmployeePage", {
-						obj: i
-					})
-				}
-			}*/
+			/*	var path = this.getView().getBindingContext().sPath.substring();   
+				var index = path.substring(path.lastIndexOf('/') + 1);
+				var oModel = this.getView().getParent().getModel("data").oData.empInfo;
+				for (var i = 0; i < oModel.length; i++) {
+					if (oModel[i].id === index) {
+						var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+						oRouter.navTo("EmployeePage", {
+							obj: i
+						})
+					}
+				}*/
 			/*var oHistory = History.getInstance();
 			var sPreviousHash = oHistory.getPreviousHash();
 			var oModel = this.getView().getParent().getModel("data").oData.empInfo;
@@ -87,7 +87,12 @@ sap.ui.define([
 			var tcNo = this.obj.ticketNo;
 			var id = this.obj.id;
 			var ctid = this.getView().getModel("data").getProperty("/status/0/" + id);
+
+			var notif = this.getView().getModel("data").getProperty("/status/0/" + id);
 			var alldata = this.getView().getModel("data").getProperty("/allData/");
+
+			var alldata = this.getView().getModel("data").getProperty("/allData/");
+
 			for (var i = 0; i < ctid.length; i++) {
 				if (ctid[i].ticketNo === tcNo) {
 					this.getView().getModel("data").setProperty("/status/0/" + id + "/" + i + "/tlInprocess", "sap-icon://accept");

@@ -15,9 +15,9 @@ sap.ui.define([
 		onEventPress: function (oEvent) {
 			var twoColumn = this.getView().byId("idFlexibleColumn");
 			twoColumn.setLayout(sap.f.LayoutType.TwoColumnsMidExpanded);
-			var obj = oEvent.getParameters().listItem.getBindingContext("data").getObject(),
-			jmodel = this.getView().getModel("data");
-			jmodel.setProperty("/notiData", obj);
+			this.obj = oEvent.getParameters().listItem.getBindingContext("data").getObject();
+		var	jmodel = this.getView().getModel("data");
+			jmodel.setProperty("/notiData", this.obj);
 			this.getView().byId("beginPage").setShowFooter(true);
 		},
 		onClosingDetail: function () {
@@ -50,6 +50,17 @@ sap.ui.define([
 		onLogout: function () {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("login");
+		},
+		onHrAccept: function(){
+			var tNo=this.obj.ticketNo;
+			var nId = this.obj.id;
+			var empObj = this.getView().getModel("data").getProperty("/status/0/" + nId);
+			for (var i = 0; i < empObj.length; i++) {
+				if (empObj[i].ticketNo === tNo) {
+					this.getView().getModel("data").setProperty("/status/0/" + nId + "/" + i + "/hrWaitins", "sap-icon://accept");
+					this.getView().getModel("data").setProperty("/status/0/" + nId + "/" + i + "/hrWaitingText", "HR Accepted");
+				}
+			}
 		}
 
 	});
