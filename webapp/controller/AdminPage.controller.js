@@ -70,6 +70,7 @@ sap.ui.define([
 		onLogout: function () {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("login");
+			this.getView().byId("bell").setVisible(false);
 		},
 		onSearchByTno: function(){
 			var aFilter = [];

@@ -21,16 +21,16 @@ sap.ui.define([
 		},
 		oSubmitPress: function () {
 			var check = this.getView().byId("idData").getProperty("value");
-			if(check=="Year"){
-			var main = this.getView().byId("idData").getProperty("value");
-			var year = this.getView().byId("idYear").getProperty("value");
-			var status = this.getView().byId("idStatus").getProperty("value");
-			}else{
-			var main = this.getView().byId("idData").getProperty("value");
-			var year = this.getView().byId("idMonth").getProperty("value");
-			var status = this.getView().byId("idStatus").getProperty("value");	
+			if (check == "Year") {
+				var main = this.getView().byId("idData").getProperty("value");
+				var year = this.getView().byId("idYear").getProperty("value");
+				var status = this.getView().byId("idStatus").getProperty("value");
+			} else {
+				var main = this.getView().byId("idData").getProperty("value");
+				var year = this.getView().byId("idMonth").getProperty("value");
+				var status = this.getView().byId("idStatus").getProperty("value");
 			}
-			this.getView().byId("issueFragment").bindData("data>/"+main+"/0/"+status+"/0/"+year);
+			this.getView().byId("issueFragment").bindData("data>/" + main + "/0/" + status + "/0/" + year);
 		},
 		chartType: function (oEvent) {
 			var chartName = oEvent.getParameters().value;
@@ -40,6 +40,7 @@ sap.ui.define([
 		onLogout: function () {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("login");
+			this.getView().byId("bell").setVisible(false);
 		}
 
 	});
