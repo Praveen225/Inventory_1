@@ -104,6 +104,8 @@ sap.ui.define([
 			for (var j = 0; j < alldata.length; j++) {
 				if (alldata[j].ticketNo === tcNo) {
 					this.getView().getModel("data").setProperty("/allData/" + j + "/enable", true);
+					this.getView().getModel("data").setProperty("/allData/" + j + "/tlInprocessText", "TL Accepted");
+					
 				}
 			}
 		}
