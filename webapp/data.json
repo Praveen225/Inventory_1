@@ -10,6 +10,7 @@
 			"sysNo": "SDFEA21212344A",
 			"dos": "02-10-2016",
 			"totIssues": "3"
+		
 		}, {
 			"name": "Poornima",
 			"id": "SE0001",
@@ -143,7 +144,9 @@
 			"tlInprocess": "sap-icon://status-in-process",
 			"tlInprocessText": "Tl Inprocess",
 			"hrWaitins": "sap-icon://lateness",
-			"hrWaitingText": "HR Waiting"
+			"hrWaitingText": "HR Waiting",
+			"hrRejDec":"",
+			"vis":false
 		}, {
 			"id": "SE0001",
 			"ticketNo": "5676879876",
@@ -154,7 +157,9 @@
 			"tlInprocess": "sap-icon://status-in-process",
 			"tlInprocessText": "Tl Inprocess",
 			"hrWaitins": "sap-icon://lateness",
-			"hrWaitingText": "HR Waiting"
+			"hrWaitingText": "HR Waiting",
+			"hrRejDec":"",
+			"vis":false
 		}, {
 			"id": "SE0001",
 			"ticketNo": "8736475647",
@@ -165,7 +170,9 @@
 			"tlInprocess": "sap-icon://status-in-process",
 			"tlInprocessText": "Tl Inprocess",
 			"hrWaitins": "sap-icon://lateness",
-			"hrWaitingText": "HR Waiting"
+			"hrWaitingText": "HR Waiting",
+			"hrRejDec":"",
+			"vis":false
 		}],
 		"SE0002": [{
 			"id": "SE0002",
@@ -177,7 +184,9 @@
 			"tlInprocess": "sap-icon://status-in-process",
 			"tlInprocessText": "Tl Inprocess",
 			"hrWaitins": "sap-icon://lateness",
-			"hrWaitingText": "HR Waiting"
+			"hrWaitingText": "HR Waiting",
+			"hrRejDec":"",
+			"vis":false
 		}, {
 			"id": "SE0002",
 			"ticketNo": "5676879876",
@@ -188,7 +197,9 @@
 			"tlInprocess": "sap-icon://status-in-process",
 			"tlInprocessText": "Tl Inprocess",
 			"hrWaitins": "sap-icon://lateness",
-			"hrWaitingText": "HR Waiting"
+			"hrWaitingText": "HR Waiting",
+			"hrRejDec":"",
+			"vis":false
 		}, {
 			"id": "SE0002",
 			"ticketNo": "5676879876",
@@ -199,7 +210,9 @@
 			"tlInprocess": "sap-icon://status-in-process",
 			"tlInprocessText": "Tl Inprocess",
 			"hrWaitins": "sap-icon://lateness",
-			"hrWaitingText": "HR Waiting"
+			"hrWaitingText": "HR Waiting",
+			"hrRejDec":"",
+			"vis":false
 		}],
 		"SE0003": [{
 			"id": "SE0003",
@@ -211,7 +224,9 @@
 			"tlInprocess": "sap-icon://status-in-process",
 			"tlInprocessText": "Tl Inprocess",
 			"hrWaitins": "sap-icon://lateness",
-			"hrWaitingText": "HR Waiting"
+			"hrWaitingText": "HR Waiting",
+			"hrRejDec":"",
+			"vis":false
 		}, {
 			"id": "SE0003",
 			"ticketNo": "26374546453",
@@ -222,7 +237,9 @@
 			"tlInprocess": "sap-icon://status-in-process",
 			"tlInprocessText": "Tl Inprocess",
 			"hrWaitins": "sap-icon://lateness",
-			"hrWaitingText": "HR Waiting"
+			"hrWaitingText": "HR Waiting",
+			"hrRejDec":"",
+			"vis":false
 		}, {
 			"id": "SE0003",
 			"ticketNo": "9384756382",
@@ -233,7 +250,9 @@
 			"tlInprocess": "sap-icon://status-in-process",
 			"tlInprocessText": "Tl Inprocess",
 			"hrWaitins": "sap-icon://lateness",
-			"hrWaitingText": "HR Waiting"
+			"hrWaitingText": "HR Waiting",
+			"hrRejDec":"",
+			"vis":false
 		}],
 		"SE0004": [{
 			"id": "SE0004",
@@ -245,7 +264,9 @@
 			"tlInprocess": "sap-icon://status-in-process",
 			"tlInprocessText": "Tl Inprocess",
 			"hrWaitins": "sap-icon://lateness",
-			"hrWaitingText": "HR Waiting"
+			"hrWaitingText": "HR Waiting",
+			"hrRejDec":"",
+			"vis":false
 		}, {
 			"id": "SE0004",
 			"ticketNo": "26374546453",
@@ -256,7 +277,9 @@
 			"tlInprocess": "sap-icon://status-in-process",
 			"tlInprocessText": "Tl Inprocess",
 			"hrWaitins": "sap-icon://lateness",
-			"hrWaitingText": "HR Waiting"
+			"hrWaitingText": "HR Waiting",
+			"hrRejDec":"",
+			"vis":false
 		}, {
 			"id": "SE0004",
 			"ticketNo": "9384756382",
@@ -267,7 +290,9 @@
 			"tlInprocess": "sap-icon://status-in-process",
 			"tlInprocessText": "Tl Inprocess",
 			"hrWaitins": "sap-icon://lateness",
-			"hrWaitingText": "HR Waiting"
+			"hrWaitingText": "HR Waiting",
+			"hrRejDec":"",
+			"vis":false
 		}]
 	}],
 	"Year": [{
@@ -883,6 +908,7 @@
 		"enable": false,
 		"tlRejDec":"",
 		"visible":false
+		
 	}, {
 		"id": "SE0002",
 		"ticketNo": "8798734231",

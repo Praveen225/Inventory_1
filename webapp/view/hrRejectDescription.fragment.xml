@@ -3,7 +3,7 @@
 		<form:SimpleForm id="isRejectSimpleForm" editable="false" layout="ResponsiveGridLayout">
 			<form:content>
 				<Text text="{i18n>rejStatus}:" />
-				<TextArea rows="5"/>
+				<TextArea rows="5" id="idHrRejDec"/>
 			</form:content>
 		</form:SimpleForm>
 		<beginButton>

@@ -70,6 +70,16 @@ sap.ui.define([
 		onLogout: function () {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("login");
+		},
+		onSearchByTno: function(){
+			var aFilter = [];
+			var sQuery = this.getView().byId("input1").getValue();
+			if (sQuery) {
+				aFilter.push(new Filter("ticketNo", FilterOperator.Contains, sQuery));
+			}
+			var oList = this.getView().byId("idIssueDetailsTable");
+			var oBinding = oList.getBinding("items");
+			oBinding.filter(aFilter);
 		}
 	});
 
