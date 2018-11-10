@@ -37,41 +37,17 @@ sap.ui.define([
 					this.getView().getModel("data").setProperty("/allData/" + k + "/visible", true);
 				}
 			}
-
+			MessageToast.show("Issue Has Been Rejected");
 		},
 		onClick: function (oEvent) {
 			window.history.go(-1);
-			/*	var path = this.getView().getBindingContext().sPath.substring();   
-				var index = path.substring(path.lastIndexOf('/') + 1);
-				var oModel = this.getView().getParent().getModel("data").oData.empInfo;
-				for (var i = 0; i < oModel.length; i++) {
-					if (oModel[i].id === index) {
-						var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-						oRouter.navTo("EmployeePage", {
-							obj: i
-						})
-					}
-				}*/
-			/*var oHistory = History.getInstance();
-			var sPreviousHash = oHistory.getPreviousHash();
-			var oModel = this.getView().getParent().getModel("data").oData.empInfo;
-			for (var i = 0; i < oModel.length; i++) {
-				if (sPreviousHash !== undefined) {
-					;
-				} else {
-					var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-					oRouter.navTo("EmployeePage", {
-						obj: i
-					});
-				}
-			}*/
 		},
 		onLogout: function () {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("login");
+			this.getView().byId("bell").setVisible(false);
 		},
 		onItemPressed: function (oEvent) {
-			/*this.getView().setModel(new JSONModel(), "data");*/
 			this.getView().byId("emptyId").setVisible(false);
 			this.getView().byId("SimpleFormDisplay").setVisible(true);
 			this.obj = oEvent.getParameters().listItem.getBindingContext("data").getObject();
@@ -119,6 +95,7 @@ sap.ui.define([
 
 				}
 			}
+				MessageToast.show("Issue Has Been Approved");
 		}
 	});
 });

@@ -2,8 +2,9 @@ sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	'sap/ui/model/json/JSONModel',
 	'sap/ui/model/Filter',
-	'sap/ui/model/FilterOperator'
-], function (Controller, JSONModel, Filter, FilterOperator) {
+	'sap/ui/model/FilterOperator',
+	"sap/m/MessageToast",
+], function (Controller, JSONModel, Filter, FilterOperator, MessageToast) {
 	"use strict";
 
 	return Controller.extend("inventory.Inventory.controller.AdminPage", {
@@ -49,17 +50,19 @@ sap.ui.define([
 			var tNo = this.obj.ticketNo;
 			var nId = this.obj.id;
 			var empObj = this.getView().getModel("data").getProperty("/status/0/" + nId);
-			var tlRejDec=this.getView().byId("idHrRejDec").getProperty("value");
+			var tlRejDec = this.getView().byId("idHrRejDec").getProperty("value");
 			for (var i = 0; i < empObj.length; i++) {
 				if (empObj[i].ticketNo === tNo) {
-					this.getView().getModel("data").setProperty("/status/0/" + nId + "/" + i + "/hrRejDec",tlRejDec );
+					this.getView().getModel("data").setProperty("/status/0/" + nId + "/" + i + "/hrRejDec", tlRejDec);
 					this.getView().getModel("data").setProperty("/status/0/" + nId + "/" + i + "/vis", true);
 				}
 			}
+			MessageToast.show("Issue Has Been Rejected");
 		},
 		onLogout: function () {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("login");
+			this.getView().byId("bell").setVisible(false);
 		},
 		onHrAccept: function () {
 			var tNo = this.obj.ticketNo;
@@ -71,6 +74,7 @@ sap.ui.define([
 					this.getView().getModel("data").setProperty("/status/0/" + nId + "/" + i + "/hrWaitingText", "HR Accepted");
 				}
 			}
+			MessageToast.show("Issue Has Been Approved");
 		}
 
 	});

@@ -33,15 +33,7 @@ sap.ui.define([
 					this.getView().byId("Id").setValue("");
 					this.getView().byId("Password").setValue("");
 					break;
-				}
-
-				/*else if (oModel[i].id === oId && oModel[i].password === oPassword && oModel[i].phoneno === undefined) {
-					
-					var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-					oRouter.navTo("EmployeePage");
-					break;
-				}*/
-				else if (oModel[i].id === oId && oModel[i].password === oPassword) {
+				} else if (oModel[i].id === oId && oModel[i].password === oPassword) {
 					var id = this.getView().byId("Id").getValue();
 					var model = this.getView().getModel("data").getProperty("/empInfo");
 					for (i = 0; i < model.length; i++) {
