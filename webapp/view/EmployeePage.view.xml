@@ -57,8 +57,8 @@
 							<forms:SimpleForm editable="true" id="ComplaisId" labelSpanL="8" labelSpanM="2" labelSpanS="2" adjustLabelSpan="false" emptySpanXL="1 "
 								emptySpanL="1" emptySpanM="1" emptySpanS="0" columnsXL="4" layout="ResponsiveLayout" columnsL="3" columnsM="2">
 								<Label text="Issue" width="300px"/>
-								<ComboBox items="{ path: 'data>/issues' }" selectedItem="Issue" change="onChange" width="300px">
-									<core:Item key="{data>issue}" text="{data>issue}"/>
+								<ComboBox items="{ path: 'data>/issues' }" selectedItem="Issue" change="onChange" width="300px" id="comboId" >
+									<core:Item  text="{data>issue}"/>
 								</ComboBox>
 								<Label text="Description" width="300px"/>
 								<TextArea cols="40" rows="5" width="300px" id="desId"/>

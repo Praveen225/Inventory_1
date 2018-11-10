@@ -33,32 +33,30 @@ sap.ui.define([
 			}
 		},
 		onPressStatus: function (oEvent) {
-				var id = this.getView().byId("Id").getProperty("text");
-				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-				oRouter.navTo("StatusPage", {
-					obj: id
-				});
+			var id = this.getView().byId("Id").getProperty("text");
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("StatusPage", {
+				obj: id
+			});
 
-			}
-			/*,
-					reset: function () {
-						this.getView().byId("desId").setValue('');
-						this.getView().byId("empName").setValue('');
-						this.getView().byId("empPassword").setValue('');
-					}*/
-			,
+		},
+		reset: function () {
+			this.getView().byId("desId").setValue("");
+			this.getView().byId("comboId").setSelectedItem(null);
+			this.getView().byId("DP2").setValue(null);
+		},
 		onSubmit: function (oEvent) {
 			var empDescription = this.byId("desId").getValue();
 			var id = this.getView().byId("Id").getProperty("text");
 			var ticketNo = Math.floor((Math.random() * 10000000000) + 1);
 			var desig = this.getView().byId("desig").getProperty("text");
 			var empName = this.getView().byId("name").getProperty("text");
-			var inprocess="sap-icon://status-in-process";
-			var waiting="sap-icon://lateness";
-			var TlInprocess="Tl Inprocess";
-			var HRWaiting="HR Waiting";
-			var enable=false;
-			var rejDec="";
+			var inprocess = "sap-icon://status-in-process";
+			var waiting = "sap-icon://lateness";
+			var TlInprocess = "Tl Inprocess";
+			var HRWaiting = "HR Waiting";
+			var enable = false;
+			var rejDec = "";
 			this.obj = {
 				issue: this.comboValue,
 				description: empDescription,
@@ -67,13 +65,13 @@ sap.ui.define([
 				name: empName,
 				Designation: desig,
 				ticketNo: ticketNo,
-				tlInprocess:inprocess,
-                tlInprocessText:TlInprocess,
-                hrWaitins:waiting,
-               hrWaitingText:HRWaiting,
-               enable:enable,
-	        	tlRejDec:rejDec,
-	        	visible:false
+				tlInprocess: inprocess,
+				tlInprocessText: TlInprocess,
+				hrWaitins: waiting,
+				hrWaitingText: HRWaiting,
+				enable: enable,
+				tlRejDec: rejDec,
+				visible: false
 			};
 			var myArray = [];
 			var newData = [];
@@ -91,7 +89,7 @@ sap.ui.define([
 				/*var oData = this.getView().getModel("data").oData;*/
 				var allData = this.getView().getModel("data").oData.allData;
 				for (var j = 0; j < oData.allData.length; j++) {
-				newData.push(oData.allData[j]);
+					newData.push(oData.allData[j]);
 				}
 				newData.unshift(this.obj);
 				this.getView().getModel("data").setProperty("/allData/", newData);
@@ -99,6 +97,7 @@ sap.ui.define([
 			if (empDescription == "" && this.comboValue == "" && this.datePicker == "") {
 				MessageToast.show("Please enter all the Feilds");
 			}
+			this.reset();
 		},
 		onChange: function (oEvent) {
 			this.comboValue = oEvent.getParameters().value;
