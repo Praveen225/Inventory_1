@@ -2,8 +2,8 @@
 	<Popover title="Sample" class="sapUiContentPadding" placement="Top" showHeader="false" contentHeight="300px" contentWidth="400px">
 		<l:VerticalLayout  width="100%">
 			<l:content>
-				<List items="{path: 'data>/notifications', templateShareable : 'true'}" class="sapContrastPlus sapContrast">
-					<NotificationListItem authorName="{data>eName}" title="{data>eIssue}" description="{data>eId}"></NotificationListItem>
+				<List items="{path: 'data>/allData', templateShareable : 'true'}" class="sapContrastPlus sapContrast">
+					<NotificationListItem authorName="{data>name}" title="{data>issue}" description="{data>id}"></NotificationListItem>
 					<!--<NotificationListItem title="kumar" description="Employee"></NotificationListItem>-->
 				</List>
 				</l:content>

@@ -50,6 +50,8 @@
 											<pf:ProcessFlowLaneHeader iconSrc="{data>/odata/hrWaitins}" text="{data>/odata/hrWaitingText}" position="1" id="idHrStatus"/>
 										</pf:lanes>
 									</pf:ProcessFlow>
+									<Label text="HR Status" visible="{data>/odata/vis}"/>
+									<Text text="{data>/odata/hrRejDec}"/>
 								</f:content>
 							</f:SimpleForm>
 							<f:SimpleForm id="emptyId">

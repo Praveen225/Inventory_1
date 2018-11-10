@@ -16,7 +16,7 @@ sap.ui.define([
 			var twoColumn = this.getView().byId("idFlexibleColumn");
 			twoColumn.setLayout(sap.f.LayoutType.TwoColumnsMidExpanded);
 			this.obj = oEvent.getParameters().listItem.getBindingContext("data").getObject();
-		var	jmodel = this.getView().getModel("data");
+			var jmodel = this.getView().getModel("data");
 			jmodel.setProperty("/notiData", this.obj);
 			this.getView().byId("beginPage").setShowFooter(true);
 		},
@@ -35,7 +35,7 @@ sap.ui.define([
 			var oBinding = oList.getBinding("items");
 			oBinding.filter(aFilter);
 		},
-		onReject: function(){
+		onReject: function () {
 			var oView = this.getView();
 			var oDialog = oView.byId("idHrDialog");
 			if (!oDialog) {
@@ -44,15 +44,25 @@ sap.ui.define([
 			}
 			oDialog.open();
 		},
-		onHrRejectClose: function(){
+		onHrRejectClose: function () {
 			this.getView().byId("idHrDialog").close();
+			var tNo = this.obj.ticketNo;
+			var nId = this.obj.id;
+			var empObj = this.getView().getModel("data").getProperty("/status/0/" + nId);
+			var tlRejDec=this.getView().byId("idHrRejDec").getProperty("value");
+			for (var i = 0; i < empObj.length; i++) {
+				if (empObj[i].ticketNo === tNo) {
+					this.getView().getModel("data").setProperty("/status/0/" + nId + "/" + i + "/hrRejDec",tlRejDec );
+					this.getView().getModel("data").setProperty("/status/0/" + nId + "/" + i + "/vis", true);
+				}
+			}
 		},
 		onLogout: function () {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("login");
 		},
-		onHrAccept: function(){
-			var tNo=this.obj.ticketNo;
+		onHrAccept: function () {
+			var tNo = this.obj.ticketNo;
 			var nId = this.obj.id;
 			var empObj = this.getView().getModel("data").getProperty("/status/0/" + nId);
 			for (var i = 0; i < empObj.length; i++) {
