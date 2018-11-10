@@ -3,8 +3,9 @@ sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator",
-	"sap/m/MessageToast"
-], function (Controller, JSONModel, Filter, FilterOperator, MessageToast) {
+	"sap/m/MessageToast",
+	"sap/ui/core/routing/History"
+], function (Controller, JSONModel, Filter, FilterOperator, MessageToast, History) {
 	"use strict";
 
 	return Controller.extend("inventory.Inventory.controller.emp_Notification", {
@@ -28,7 +29,8 @@ sap.ui.define([
 			this.getView().byId("idHrDialog").close();
 		},
 		onClick: function (oEvent) {
-			var path = this.getView().getBindingContext().sPath.substring();
+			window.history.go(-1);
+		/*	var path = this.getView().getBindingContext().sPath.substring();   
 			var index = path.substring(path.lastIndexOf('/') + 1);
 			var oModel = this.getView().getParent().getModel("data").oData.empInfo;
 			for (var i = 0; i < oModel.length; i++) {
@@ -36,10 +38,22 @@ sap.ui.define([
 					var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 					oRouter.navTo("EmployeePage", {
 						obj: i
+					})
+				}
+			}*/
+			/*var oHistory = History.getInstance();
+			var sPreviousHash = oHistory.getPreviousHash();
+			var oModel = this.getView().getParent().getModel("data").oData.empInfo;
+			for (var i = 0; i < oModel.length; i++) {
+				if (sPreviousHash !== undefined) {
+					;
+				} else {
+					var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+					oRouter.navTo("EmployeePage", {
+						obj: i
 					});
 				}
-			}
-
+			}*/
 		},
 		onLogout: function () {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
@@ -73,7 +87,7 @@ sap.ui.define([
 			var tcNo = this.obj.ticketNo;
 			var id = this.obj.id;
 			var ctid = this.getView().getModel("data").getProperty("/status/0/" + id);
-			var alldata= this.getView().getModel("data").getProperty("/allData/");
+			var alldata = this.getView().getModel("data").getProperty("/allData/");
 			for (var i = 0; i < ctid.length; i++) {
 				if (ctid[i].ticketNo === tcNo) {
 					this.getView().getModel("data").setProperty("/status/0/" + id + "/" + i + "/tlInprocess", "sap-icon://accept");
@@ -82,11 +96,11 @@ sap.ui.define([
 					this.getView().getModel("data").setProperty("/status/0/" + id + "/" + i + "/hrWaitingText", "HR Inprocess");
 				}
 			}
-			for(var j=0;j<alldata.length;j++){
-					if(alldata[j].ticketNo===tcNo){
-						this.getView().getModel("data").setProperty("/allData/"+j+"/enable",true);
-					}
+			for (var j = 0; j < alldata.length; j++) {
+				if (alldata[j].ticketNo === tcNo) {
+					this.getView().getModel("data").setProperty("/allData/" + j + "/enable", true);
 				}
+			}
 		}
 	});
 });
