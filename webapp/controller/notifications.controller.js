@@ -55,6 +55,8 @@ sap.ui.define([
 				if (empObj[i].ticketNo === tNo) {
 					this.getView().getModel("data").setProperty("/status/0/" + nId + "/" + i + "/hrRejDec", tlRejDec);
 					this.getView().getModel("data").setProperty("/status/0/" + nId + "/" + i + "/vis", true);
+					this.getView().getModel("data").setProperty("/status/0/" + nId + "/" + i + "/hrWaitins", "sap-icon://decline");
+					this.getView().getModel("data").setProperty("/status/0/" + nId + "/" + i + "/hrWaitingText", "HR Rejected");
 				}
 			}
 			MessageToast.show("Issue Has Been Rejected");

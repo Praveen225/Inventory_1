@@ -27,7 +27,9 @@ sap.ui.define([
 		},
 		onTlRejectClose: function () {
 			this.getView().byId("idTlDialog").close();
+			var id = this.obj.id;
 			var alldata = this.getView().getModel("data").getProperty("/allData/");
+			var rejStatus=this.getView().getModel("data").getProperty("/status/0/" + id);
 			var tcNo = this.obj.ticketNo;
 			this.decTa = this.getView().byId("idTlRejDec").getProperty("value");
 			for (var k = 0; k < alldata.length; k++) {
@@ -35,6 +37,14 @@ sap.ui.define([
 					this.getView().getModel("data").setProperty("/allData/" + k + "/tlRejDec", this.decTa);
 					this.getView().getModel("data").setProperty("/allData/" + k + "/tlInprocessText", "TL Rejected");
 					this.getView().getModel("data").setProperty("/allData/" + k + "/visible", true);
+				}
+			}
+			for (var z = 0; z < rejStatus.length; z++) {
+				if (rejStatus[z].ticketNo === tcNo) {
+					this.getView().getModel("data").setProperty("/status/0/" + id + "/" + z + "/tlInprocess", "sap-icon://decline");
+					this.getView().getModel("data").setProperty("/status/0/" + id + "/" + z + "/tlInprocessText", "TL Rejected");
+					this.getView().getModel("data").setProperty("/status/0/" + id + "/" + z + "/hrWaitins", "sap-icon://unlocked");
+					this.getView().getModel("data").setProperty("/status/0/" + id + "/" + z + "/hrWaitingText", "HR Locked");
 				}
 			}
 			MessageToast.show("Issue Has Been Rejected");
@@ -74,12 +84,7 @@ sap.ui.define([
 			var tcNo = this.obj.ticketNo;
 			var id = this.obj.id;
 			var ctid = this.getView().getModel("data").getProperty("/status/0/" + id);
-
-			var notif = this.getView().getModel("data").getProperty("/status/0/" + id);
 			var alldata = this.getView().getModel("data").getProperty("/allData/");
-
-			var alldata = this.getView().getModel("data").getProperty("/allData/");
-
 			for (var i = 0; i < ctid.length; i++) {
 				if (ctid[i].ticketNo === tcNo) {
 					this.getView().getModel("data").setProperty("/status/0/" + id + "/" + i + "/tlInprocess", "sap-icon://accept");
