@@ -1,14 +1,24 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	'sap/ui/model/Filter',
-	'sap/ui/model/FilterOperator'
-], function (Controller,Filter,FilterOperator) {
+	'sap/ui/model/FilterOperator',
+	'sap/ui/model/json/JSONModel'
+], function (Controller,Filter,FilterOperator,JSONModel) {
 	"use strict";
 	return Controller.extend("inventory.Inventory.controller.AdminPage", {
 		onInit: function () {
+			var oModel = new JSONModel(jQuery.sap.getModulePath("inventory.Inventory", "/data.json"));
+			this.getView().setModel(oModel);
+			this.getView().setModel(new JSONModel(), "jmodel");
+			
           var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 		  oRouter.getRoute("AdminPage").attachPatternMatched(this._onObjectMatched, this);
-		},
+		  
+		}/*,
+		onBeforeRendering :function(){
+			var length=this.getView().getModel("data").getProperty("/allData").length;
+		}*/
+		,
 			_onObjectMatched: function (oEvent) {
               var oArg = oEvent.getParameters("arguments");
               var oView = this.getView();

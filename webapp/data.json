@@ -10,7 +10,6 @@
 			"sysNo": "SDFEA21212344A",
 			"dos": "02-10-2016",
 			"totIssues": "3"
-		
 		}, {
 			"name": "Poornima",
 			"id": "SE0001",
@@ -907,7 +906,11 @@
 		"hrWaitingText": "HR Waiting",
 		"enable": false,
 		"tlRejDec": "",
-		"visible": false
+		"visible": false,
+		"no":"*",
+		"staIcon":"sap-icon://process",
+		"staText":"TL Inprocess",
+		"state":"Warning"
 	}, {
 		"id": "SE0002",
 		"ticketNo": "8798734231",
@@ -923,7 +926,9 @@
 		"hrWaitingText": "HR Waiting",
 		"enable": false,
 		"tlRejDec": "",
-		"visible": false
+		"visible": false,"staIcon":"sap-icon://process",
+		"staText":"TL Inprocess",
+		"state":"Warning"
 	}, {
 		"id": "SE0002",
 		"ticketNo": "6736454657",
@@ -939,7 +944,10 @@
 		"hrWaitingText": "HR Waiting",
 		"enable": false,
 		"tlRejDec": "",
-		"visible": false
+		"visible": false,
+		"staIcon":"sap-icon://process",
+		"staText":"TL Inprocess",
+		"state":"Warning"
 	}, {
 		"id": "SE0003",
 		"ticketNo": "5463234232",
@@ -955,7 +963,10 @@
 		"hrWaitingText": "HR Waiting",
 		"enable": false,
 		"tlRejDec": "",
-		"visible": false
+		"visible": false,
+		"staIcon":"sap-icon://process",
+		"staText":"TL Inprocess",
+		"state":"Warning"
 	}, {
 		"id": "SE0001",
 		"ticketNo": "5436544232",
@@ -971,7 +982,10 @@
 		"hrWaitingText": "HR Waiting",
 		"enable": false,
 		"tlRejDec": "",
-		"visible": false
+		"visible": false,
+		"staIcon":"sap-icon://process",
+		"staText":"TL Inprocess",
+		"state":"Warning"
 	}, {
 		"id": "SE0003",
 		"ticketNo": "4321567232",
@@ -987,7 +1001,10 @@
 		"hrWaitingText": "HR Waiting",
 		"enable": false,
 		"tlRejDec": "",
-		"visible": false
+		"visible": false,
+		"staIcon":"sap-icon://process",
+		"staText":"TL Inprocess",
+		"state":"Warning"
 	}, {
 		"id": "SE0004",
 		"ticketNo": "9876789065",
@@ -1003,7 +1020,10 @@
 		"hrWaitingText": "HR Waiting",
 		"enable": false,
 		"tlRejDec": "",
-		"visible": false
+		"visible": false,
+		"staIcon":"sap-icon://process",
+		"staText":"TL Inprocess",
+		"state":"Warning"
 	}],
 	"processFlow": [{
 		"tlInprocess": "sap-icon://status-in-process",

@@ -37,7 +37,6 @@ sap.ui.define([
 			var ticketNo = Math.floor((Math.random() * 10000000000) + 1);
 			var desig = this.getView().byId("desig").getProperty("text");
 			var empName = this.getView().byId("name").getProperty("text");
-
 			var inprocess = "sap-icon://status-in-process";
 			var waiting = "sap-icon://lateness";
 			var TlInprocess = "Tl Inprocess";
@@ -47,6 +46,11 @@ sap.ui.define([
 			var visible = false;
 			var tlRejDec = "";
 			var vis1 = false;
+			var active="*";
+			var stIcon="sap-icon://process";
+			var atText="TL Inprocess";
+			var state="Warning";
+			
 
 			this.obj = {
 				issue: this.comboValue,
@@ -56,7 +60,6 @@ sap.ui.define([
 				name: empName,
 				Designation: desig,
 				ticketNo: ticketNo,
-
 				tlInprocess: inprocess,
 				tlInprocessText: TlInprocess,
 				hrWaitins: waiting,
@@ -65,8 +68,11 @@ sap.ui.define([
 				tlRejDec: rejDec,
 				visible: visible,
 				hrRejDec: tlRejDec,
-				vis: vis1
-
+				vis: vis1,
+				no:active,
+				staIcon:stIcon,
+		       staText:atText,
+		       state:state
 			};
 			var myArray = [];
 			var newData = [];

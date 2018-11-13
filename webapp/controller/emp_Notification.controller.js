@@ -29,7 +29,7 @@ sap.ui.define([
 			this.getView().byId("idTlDialog").close();
 			var id = this.obj.id;
 			var alldata = this.getView().getModel("data").getProperty("/allData/");
-			var rejStatus=this.getView().getModel("data").getProperty("/status/0/" + id);
+			var rejStatus = this.getView().getModel("data").getProperty("/status/0/" + id);
 			var tcNo = this.obj.ticketNo;
 			this.decTa = this.getView().byId("idTlRejDec").getProperty("value");
 			for (var k = 0; k < alldata.length; k++) {
@@ -37,6 +37,9 @@ sap.ui.define([
 					this.getView().getModel("data").setProperty("/allData/" + k + "/tlRejDec", this.decTa);
 					this.getView().getModel("data").setProperty("/allData/" + k + "/tlInprocessText", "TL Rejected");
 					this.getView().getModel("data").setProperty("/allData/" + k + "/visible", true);
+					this.getView().getModel("data").setProperty("/allData/" + k + "/staIcon", "sap-icon://decline");
+					this.getView().getModel("data").setProperty("/allData/" + k + "/staText", "TL Rejected");
+					this.getView().getModel("data").setProperty("/allData/" + k + "/state", "Error");
 				}
 			}
 			for (var z = 0; z < rejStatus.length; z++) {
@@ -97,10 +100,13 @@ sap.ui.define([
 				if (alldata[j].ticketNo === tcNo) {
 					this.getView().getModel("data").setProperty("/allData/" + j + "/enable", true);
 					this.getView().getModel("data").setProperty("/allData/" + j + "/tlInprocessText", "TL Accepted");
+					this.getView().getModel("data").setProperty("/allData/" + j + "/staIcon", "sap-icon://accept");
+					this.getView().getModel("data").setProperty("/allData/" + j + "/staText", "TL Accepted");
+					this.getView().getModel("data").setProperty("/allData/" + j + "/state", "Success");
 
 				}
 			}
-				MessageToast.show("Issue Has Been Approved");
+			MessageToast.show("Issue Has Been Approved");
 		}
 	});
 });

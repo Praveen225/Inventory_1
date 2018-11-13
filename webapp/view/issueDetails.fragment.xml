@@ -1,5 +1,5 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
-	<Dialog id="idIssueDetailsDialog" title="System Details">
+	<Dialog id="idIssueDetailsDialog" title="Issue Details">
 		<Toolbar>
 			<ToolbarSpacer/>
 			<SearchField width="40%" liveChange="onSearchByTno" id="input1"/>

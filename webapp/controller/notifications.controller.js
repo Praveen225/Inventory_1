@@ -30,7 +30,7 @@ sap.ui.define([
 			var aFilter = [];
 			var sQuery = this.getView().byId("input").getValue();
 			if (sQuery) {
-				aFilter.push(new Filter("tNo", FilterOperator.Contains, sQuery));
+				aFilter.push(new Filter("ticketNo", FilterOperator.Contains, sQuery));
 			}
 			var oList = this.getView().byId("notfList");
 			var oBinding = oList.getBinding("items");
@@ -50,6 +50,7 @@ sap.ui.define([
 			var tNo = this.obj.ticketNo;
 			var nId = this.obj.id;
 			var empObj = this.getView().getModel("data").getProperty("/status/0/" + nId);
+			var alldata = this.getView().getModel("data").getProperty("/allData/");
 			var tlRejDec = this.getView().byId("idHrRejDec").getProperty("value");
 			for (var i = 0; i < empObj.length; i++) {
 				if (empObj[i].ticketNo === tNo) {
@@ -57,6 +58,13 @@ sap.ui.define([
 					this.getView().getModel("data").setProperty("/status/0/" + nId + "/" + i + "/vis", true);
 					this.getView().getModel("data").setProperty("/status/0/" + nId + "/" + i + "/hrWaitins", "sap-icon://decline");
 					this.getView().getModel("data").setProperty("/status/0/" + nId + "/" + i + "/hrWaitingText", "HR Rejected");
+				}
+			}
+			for (var k = 0; k < alldata.length; k++) {
+				if (alldata[k].ticketNo === tNo) {
+					this.getView().getModel("data").setProperty("/allData/" + k + "/staIcon", "sap-icon://decline");
+					this.getView().getModel("data").setProperty("/allData/" + k + "/staText", "HR Rejected");
+					this.getView().getModel("data").setProperty("/allData/" + k + "/state", "Error");
 				}
 			}
 			MessageToast.show("Issue Has Been Rejected");
@@ -70,10 +78,19 @@ sap.ui.define([
 			var tNo = this.obj.ticketNo;
 			var nId = this.obj.id;
 			var empObj = this.getView().getModel("data").getProperty("/status/0/" + nId);
+			var alldata = this.getView().getModel("data").getProperty("/allData/");
 			for (var i = 0; i < empObj.length; i++) {
 				if (empObj[i].ticketNo === tNo) {
 					this.getView().getModel("data").setProperty("/status/0/" + nId + "/" + i + "/hrWaitins", "sap-icon://accept");
 					this.getView().getModel("data").setProperty("/status/0/" + nId + "/" + i + "/hrWaitingText", "HR Accepted");
+				}
+			}
+			for (var j = 0; j < alldata.length; j++) {
+				if (alldata[j].ticketNo === tNo) {
+					this.getView().getModel("data").setProperty("/allData/" + j + "/staIcon", "sap-icon://accept");
+					this.getView().getModel("data").setProperty("/allData/" + j + "/staText", "HR Accepted");
+					this.getView().getModel("data").setProperty("/allData/" + j + "/state", "Success");
+
 				}
 			}
 			MessageToast.show("Issue Has Been Approved");

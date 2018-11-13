@@ -92,7 +92,7 @@
 		</content>
 		<footer>
 			<Toolbar class="idAdminFooter">
-				<Button icon="sap-icon://bell" type="Transparent" class="sapUiTinyMargin" press="onNotifClick"/>
+				<Button icon="sap-icon://bell" type="Transparent" text="" class="sapUiTinyMargin" press="onNotifClick"/>
 			</Toolbar>
 		</footer>
 	</Page>
