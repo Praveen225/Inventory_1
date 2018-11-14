@@ -56,6 +56,7 @@ sap.ui.define([
 		notifications: function (oEvent) {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("notifications");
+			this.getView().getModel("data").setProperty("/allData/0/notifSymb", "");
 		},
 		onEmpEquSearch: function(){
 			var aFilter = [];
@@ -76,6 +77,7 @@ sap.ui.define([
 			}
 
 			this._oPopover.openBy(oEvent.getSource());
+			this.getView().getModel("data").setProperty("/allData/0/notifSymb", "");
 		},
 		onLogout: function () {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);

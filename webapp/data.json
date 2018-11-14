@@ -910,7 +910,8 @@
 		"no":"*",
 		"staIcon":"sap-icon://process",
 		"staText":"TL Inprocess",
-		"state":"Warning"
+		"state":"Warning",
+		"notifSymb":""
 	}, {
 		"id": "SE0002",
 		"ticketNo": "8798734231",
