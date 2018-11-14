@@ -33,6 +33,9 @@
 						</headerToolbar>
 						<items >
 							<ObjectListItem title="{data>issue}" number="Ticket No:" numberUnit="{data>ticketNo}" type="Navigation">
+								<firstStatus>
+									<ObjectStatus icon="{data>staIcon}" text="{data>staText}" state="{data>state}"/>
+						      </firstStatus>
 								<attributes>
 									<ObjectAttribute text="{data>id}"/>
 									<ObjectAttribute text="{data>Date}"/>
@@ -50,7 +53,7 @@
 			<Page title="Notification Details">
 				<Toolbar>
 					<ToolbarSpacer/>
-					<Button icon="sap-icon://decline" type="Transparent" press="onClosingDetail"></Button>
+					<Button icon="sap-icon://decline"  type="Transparent" press="onClosingDetail"></Button>
 					<!--<core:Icon src="sap-icon://decline" class="sapUiMediumMargin"/>-->
 				</Toolbar>
 				<content>

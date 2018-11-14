@@ -37,7 +37,6 @@ sap.ui.define([
 			var ticketNo = Math.floor((Math.random() * 10000000000) + 1);
 			var desig = this.getView().byId("desig").getProperty("text");
 			var empName = this.getView().byId("name").getProperty("text");
-
 			var inprocess = "sap-icon://status-in-process";
 			var waiting = "sap-icon://lateness";
 			var TlInprocess = "Tl Inprocess";
@@ -47,6 +46,11 @@ sap.ui.define([
 			var visible = false;
 			var tlRejDec = "";
 			var vis1 = false;
+			var active="*";
+			var stIcon="sap-icon://process";
+			var atText="TL Inprocess";
+			var state="Warning";
+			var symb="";
 
 			this.obj = {
 				issue: this.comboValue,
@@ -56,7 +60,6 @@ sap.ui.define([
 				name: empName,
 				Designation: desig,
 				ticketNo: ticketNo,
-
 				tlInprocess: inprocess,
 				tlInprocessText: TlInprocess,
 				hrWaitins: waiting,
@@ -65,8 +68,12 @@ sap.ui.define([
 				tlRejDec: rejDec,
 				visible: visible,
 				hrRejDec: tlRejDec,
-				vis: vis1
-
+				vis: vis1,
+				no:active,
+				staIcon:stIcon,
+		       staText:atText,
+		       state:state,
+		       notifSymb:symb
 			};
 			var myArray = [];
 			var newData = [];
@@ -85,9 +92,15 @@ sap.ui.define([
 				var allData = this.getView().getModel("data").oData.allData;
 				for (var j = 0; j < oData.allData.length; j++) {
 					newData.push(oData.allData[j]);
+					var oldLength= oData.allData.length;
 				}
 				newData.unshift(this.obj);
+				var newLength=newData.length;
 				this.getView().getModel("data").setProperty("/allData/", newData);
+			}
+			if(newLength > oldLength){
+				var notNo=newLength-oldLength;
+				this.getView().getModel("data").setProperty("/allData/0/notifSymb", "*");
 			}
 			if (empDescription == "" && this.comboValue == "" && this.datePicker == "") {
 				MessageToast.show("Please enter all the Feilds");
@@ -108,6 +121,7 @@ sap.ui.define([
 		empNotification: function () {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("emp_Notification");
+			this.getView().getModel("data").setProperty("/allData/0/notifSymb", "");
 		}
 	});
 });
