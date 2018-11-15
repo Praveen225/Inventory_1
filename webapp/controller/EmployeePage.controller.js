@@ -32,6 +32,7 @@ sap.ui.define([
 			this.getView().byId("DP2").setValue(null);
 		},
 		onSubmit: function (oEvent) {
+			var oldLength1= this.getView().getModel("data").getProperty("/allData/").length;
 			var empDescription = this.byId("desId").getValue();
 			var id = this.getView().byId("Id").getProperty("text");
 			var ticketNo = Math.floor((Math.random() * 10000000000) + 1);
@@ -99,7 +100,7 @@ sap.ui.define([
 				this.getView().getModel("data").setProperty("/allData/", newData);
 			}
 			if(newLength > oldLength){
-				var notNo=newLength-oldLength;
+				var notNo=newLength-oldLength1;
 				this.getView().getModel("data").setProperty("/allData/0/notifSymb", "*");
 			}
 			if (empDescription == "" && this.comboValue == "" && this.datePicker == "") {
