@@ -53,19 +53,17 @@ sap.ui.define([
 				} else if (oModel[i].id !== oId && oModel[i].password === oPassword) {
 					MessageToast.show("Please enter valid Id");
 					this.getView().byId("Id").setValueState("Error");
+				
 				} else if (oModel[i].password !== oPassword && oModel[i].id === oId) {
 					MessageToast.show("Please enter valid Password");
 					this.getView().byId("Password").setValueState("Error");
-				} /*else if(oModel[i].id !== oId){
-					MessageToast.show("Please enter valid Id");
-				}else if(oModel[i].password !== oPassword){
-					MessageToast.show("Please enter valid Password");
-				}else if(oModel[i].id !== ""){
-					MessageToast.show("Please enter valid Id");
-				}else if(oModel[i].password !== ""){
-					MessageToast.show("Please enter valid Password");
-				}*/
 				
+				} /*else if(oId === "" && oModel[i].password !== oPassword){
+					MessageToast.show("Please enter valid Id and Password");
+					this.getView().byId("Password").setValueState("Error");
+					this.getView().byId("Id").setValueState("Error");
+					
+				}*/
 			}
 		},
 		checkValidation: function (oEvent) {
