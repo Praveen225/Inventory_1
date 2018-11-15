@@ -25,8 +25,8 @@ sap.ui.define([
 			}
 			oDialog.open();
 		},
-		onTlRejectClose: function () {
-			this.getView().byId("idTlDialog").close();
+		onTlRejectSubmit: function () {
+			/*this.getView().byId("idTlDialog").close();*/
 			var id = this.obj.id;
 			var alldata = this.getView().getModel("data").getProperty("/allData/");
 			var rejStatus = this.getView().getModel("data").getProperty("/status/0/" + id);
@@ -50,7 +50,15 @@ sap.ui.define([
 					this.getView().getModel("data").setProperty("/status/0/" + id + "/" + z + "/hrWaitingText", "HR Locked");
 				}
 			}
-			MessageToast.show("Issue Has Been Rejected");
+			if(this.decTa === ""){
+				MessageToast.show("Enter Valid Reason");
+			}else {
+				MessageToast.show("Issue Has Been Rejected");
+				this.getView().byId("idTlDialog").close();
+			}
+		},
+		onTlRejectClose : function(){
+			this.getView().byId("idTlDialog").close();
 		},
 		onClick: function (oEvent) {
 			window.history.go(-1);
@@ -103,7 +111,6 @@ sap.ui.define([
 					this.getView().getModel("data").setProperty("/allData/" + j + "/staIcon", "sap-icon://accept");
 					this.getView().getModel("data").setProperty("/allData/" + j + "/staText", "TL Accepted");
 					this.getView().getModel("data").setProperty("/allData/" + j + "/state", "Success");
-
 				}
 			}
 			MessageToast.show("Issue Has Been Approved");

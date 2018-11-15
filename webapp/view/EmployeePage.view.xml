@@ -54,17 +54,22 @@
 					<o:ObjectPageSection>
 						<o:ObjectPageSubSection id="paymentSubSection" title="Complaints">
 							<!--<o:blocks>-->
-							<forms:SimpleForm editable="true" id="ComplaisId" labelSpanL="8" labelSpanM="2" labelSpanS="2" adjustLabelSpan="false" emptySpanXL="1 "
-								emptySpanL="1" emptySpanM="1" emptySpanS="0" columnsXL="4" layout="ResponsiveLayout" columnsL="3" columnsM="2">
-								<Label text="Issue" width="300px"/>
-								<ComboBox items="{ path: 'data>/issues' }" selectedItem="Issue" change="onChange" width="300px" id="comboId" >
-									<core:Item  text="{data>issue}"/>
-								</ComboBox>
-								<Label text="Description" width="300px"/>
-								<TextArea cols="40" rows="5" width="300px" id="desId"/>
+							<forms:SimpleForm editable="true" maxContainerCols="2" id="ComplaisId" labelSpanL="5" labelSpanM="8" labelSpanS="6" adjustLabelSpan="false"
+								emptySpanL="0" emptySpanM="0" emptySpanS="0" layout="ResponsiveLayout" columnsL="2" columnsM="2">
+								<!--<layout:Grid>-->
+								<layout:VerticalLayout class = "sapUiLargeMarginBegin">
+									<Label text="Issue" width="300px" class = "sapUiLargeMarginBegin"/>
+									<ComboBox items="{ path: 'data>/issues' }" class = "sapUiLargeMarginBegin" selectedItem="Issue" change="onChange" width="500px" id="comboId">
+										<core:Item text="{data>issue}"/>
+									</ComboBox>
+									<Label text="Description" width="300px" class = "sapUiLargeMarginBegin"/>
+									<TextArea cols="40" rows="5" width="500px" id="desId" class = "sapUiLargeMarginBegin"/>
+								</layout:VerticalLayout>
+									
+								<!--</layout:Grid>-->
 								<!--<Label text="date" width="300px"/>
 								<DatePicker id="DP2" valueFormat="yyyy-MM-dd" displayFormat="long" change="handleChange" class="sapUiSmallMarginBottom" width="300px"/>-->
-								<Label/>
+								<!--<Label/>-->
 								<!--<Button type="Accept" text="Submit" press="onSubmit"/>-->
 							</forms:SimpleForm>
 						</o:ObjectPageSubSection>

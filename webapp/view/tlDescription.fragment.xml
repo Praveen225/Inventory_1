@@ -7,7 +7,10 @@
 			</form:content>
 		</form:SimpleForm>
 		<beginButton>
-			<Button text="{i18n>sub}" press="onTlRejectClose"/>
+			<Button text="{i18n>sub}" press="onTlRejectSubmit"/>
 		</beginButton>
+		<endButton>
+			<Button text="{i18n>close}" press="onTlRejectClose"/>
+		</endButton>
 	</Dialog>
 </core:FragmentDefinition>

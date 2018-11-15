@@ -3,11 +3,14 @@
 	xmlns:f="sap.ui.layout.form" xmlns:layout="sap.ui.layout">
 	<App>
 		<pages>
-			<Page title="{i18n>tlNotification}">
+			<Page title="{i18n>tlNotification}" showNavButton="true" navButtonPress="onClick">
+				<headerContent>
+					<Button icon="sap-icon://log" press="onLogout"/>
+				</headerContent>
 				<content>
 					<SplitContainer>
 						<masterPages>
-							<Page title="{i18n>Notification_List}" showNavButton="true" navButtonPress="onClick">
+							<Page title="{i18n>Notification_List}" >
 								<content>
 									<SearchField liveChange="onSearch"/>
 									<List id="list1" items="{data>/allData}" itemPress="onItemPressed">	<!--{data>/status}-->
@@ -26,10 +29,10 @@
 							</Page>
 						</masterPages>
 						<detailPages>
-							<Page title="{i18n>notification}">
-								<headerContent>
+							<Page showHeader="false">
+								<!--<headerContent>
 									<Button icon="sap-icon://log" press="onLogout"/>
-								</headerContent>
+								</headerContent>-->
 								<content>
 									<f:SimpleForm id="SimpleFormDisplay" editable="true" layout="ResponsiveGridLayout"
 										title="{i18n>notification} of Ticket Number {data>/odata/ticketNo}" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12"
