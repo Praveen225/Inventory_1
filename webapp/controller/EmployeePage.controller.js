@@ -98,7 +98,12 @@ sap.ui.define([
 			for (var i = 0; i < oData.status[0][id].length; i++) {
 				myArray.push(oData.status[0][id][i]);
 			}
-			if (empDescription !== "" && this.comboValue !== "") { /*&& this.datePicker !== ""*/
+			if (empDescription === "" && this.comboValue === undefined) {
+				MessageToast.show("Please enter all the Feilds");
+			}
+			if (myArray.length > 7) {
+				MessageToast.show("You exceed the limit of Issues raised");
+			} else if (empDescription !== "" && this.comboValue !== "") { 
 				myArray.push(this.obj);
 				oModel.setProperty("/status/0/" + id, myArray);
 				myArray = oModel.getProperty("/status/0/" + id, myArray);
@@ -118,9 +123,7 @@ sap.ui.define([
 				var notNo = newLength - oldLength;
 				this.getView().getModel("data").setProperty("/allData/0/notifSymb", "*");
 			}
-			if (empDescription == "" && this.comboValue == "") { /*&& this.datePicker == ""*/
-				MessageToast.show("Please enter all the Feilds");
-			}
+
 			this.reset();
 		},
 		onChange: function (oEvent) {
