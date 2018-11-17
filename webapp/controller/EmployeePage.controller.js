@@ -29,7 +29,7 @@ sap.ui.define([
 		reset: function () {
 			this.getView().byId("desId").setValue("");
 			this.getView().byId("comboId").setSelectedItem(null);
-			this.getView().byId("DP2").setValue(null);
+			/*this.getView().byId("DP2").setValue(null);*/
 		},
 		onSubmit: function (oEvent) {
 			var oldLength1= this.getView().getModel("data").getProperty("/allData/").length;
@@ -47,16 +47,28 @@ sap.ui.define([
 			var visible = false;
 			var tlRejDec = "";
 			var vis1 = false;
-			var active="*";
-			var stIcon="sap-icon://process";
-			var atText="TL Inprocess";
-			var state="Warning";
-			var symb="";
-
+			var vis2 = false;
+			var active = "*";
+			var stIcon = "sap-icon://process";
+			var atText = "TL Inprocess";
+			var state = "Warning";
+			var symb = "";
+			var time="";
+			var today = new Date();
+			var dd = today.getDate();
+			var mm = today.getMonth() + 1; //January is 0!
+			var yyyy = today.getFullYear();
+			if (dd < 10) {
+				dd = '0' + dd;
+			}
+			if (mm < 10) {
+				mm = '0' + mm;
+			}
+			today = mm + '/' + dd + '/' + yyyy;
 			this.obj = {
 				issue: this.comboValue,
 				description: empDescription,
-				Date: this.datePicker,
+				Date: today,
 				id: id,
 				name: empName,
 				Designation: desig,
@@ -70,11 +82,14 @@ sap.ui.define([
 				visible: visible,
 				hrRejDec: tlRejDec,
 				vis: vis1,
-				no:active,
-				staIcon:stIcon,
-		       staText:atText,
-		       state:state,
-		       notifSymb:symb
+				no: active,
+				staIcon: stIcon,
+				staText: atText,
+				state: state,
+				notifSymb: symb,
+				date1:dd,
+				issueTime:time,
+				visible1:vis2
 			};
 			var myArray = [];
 			var newData = [];
@@ -83,7 +98,7 @@ sap.ui.define([
 			for (var i = 0; i < oData.status[0][id].length; i++) {
 				myArray.push(oData.status[0][id][i]);
 			}
-			if (empDescription !== "" && this.comboValue !== "" && this.datePicker !== "") {
+			if (empDescription !== "" && this.comboValue !== "") { /*&& this.datePicker !== ""*/
 				myArray.push(this.obj);
 				oModel.setProperty("/status/0/" + id, myArray);
 				myArray = oModel.getProperty("/status/0/" + id, myArray);
@@ -93,27 +108,29 @@ sap.ui.define([
 				var allData = this.getView().getModel("data").oData.allData;
 				for (var j = 0; j < oData.allData.length; j++) {
 					newData.push(oData.allData[j]);
-					var oldLength= oData.allData.length;
+					var oldLength = oData.allData.length;
 				}
 				newData.unshift(this.obj);
-				var newLength=newData.length;
+				var newLength = newData.length;
 				this.getView().getModel("data").setProperty("/allData/", newData);
 			}
-			if(newLength > oldLength){
-				var notNo=newLength-oldLength1;
+			if (newLength > oldLength) {
+				var notNo = newLength - oldLength;
 				this.getView().getModel("data").setProperty("/allData/0/notifSymb", "*");
 			}
-			if (empDescription == "" && this.comboValue == "" && this.datePicker == "") {
+			if (empDescription == "" && this.comboValue == "") { /*&& this.datePicker == ""*/
 				MessageToast.show("Please enter all the Feilds");
 			}
 			this.reset();
 		},
 		onChange: function (oEvent) {
-			this.comboValue = oEvent.getParameters().value;
-		},
-		handleChange: function (oEvent) {
-			this.datePicker = oEvent.getParameters().value;
-		},
+				this.comboValue = oEvent.getParameters().value;
+			}
+			/*,
+					handleChange: function (oEvent) {
+						this.datePicker = oEvent.getParameters().value;
+					}*/
+			,
 		onLogout: function () {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("login");

@@ -43,7 +43,7 @@
 						<o:ObjectPageSubSection >
 							<o:blocks>
 								<layout:BlockLayout background="Light">
-									<layout:BlockLayoutRow rowColorSet="ColorSet1" >
+									<layout:BlockLayoutRow rowColorSet="ColorSet1">
 										<layout:BlockLayoutCell >
 											<layout:VerticalLayout class="sapUiTinyMargin">
 												<core:Icon src="sap-icon://add-equipment" size="40px" class="sapUiTinyMargin" press="equipment"></core:Icon>

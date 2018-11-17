@@ -62,8 +62,8 @@
 								</ComboBox>
 								<Label text="Description" width="300px"/>
 								<TextArea cols="40" rows="5" width="300px" id="desId"/>
-								<Label text="date" width="300px"/>
-								<DatePicker id="DP2" valueFormat="yyyy-MM-dd" displayFormat="long" change="handleChange" class="sapUiSmallMarginBottom" width="300px"/>
+								<!--<Label text="date" width="300px"/>
+								<DatePicker id="DP2" valueFormat="yyyy-MM-dd" displayFormat="long" change="handleChange" class="sapUiSmallMarginBottom" width="300px"/>-->
 								<Label/>
 								<!--<Button type="Accept" text="Submit" press="onSubmit"/>-->
 							</forms:SimpleForm>
