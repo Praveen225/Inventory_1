@@ -145,7 +145,8 @@
 			"hrWaitins": "sap-icon://lateness",
 			"hrWaitingText": "HR Waiting",
 			"hrRejDec":"",
-			"vis":false
+			"vis":false,
+			"visible1":false
 		}, {
 			"id": "SE0001",
 			"ticketNo": "5676879876",
@@ -158,7 +159,8 @@
 			"hrWaitins": "sap-icon://lateness",
 			"hrWaitingText": "HR Waiting",
 			"hrRejDec":"",
-			"vis":false
+			"vis":false,
+			"visible1":false
 		}, {
 			"id": "SE0001",
 			"ticketNo": "8736475647",
@@ -171,7 +173,8 @@
 			"hrWaitins": "sap-icon://lateness",
 			"hrWaitingText": "HR Waiting",
 			"hrRejDec":"",
-			"vis":false
+			"vis":false,
+			"visible1":false
 		}],
 		"SE0002": [{
 			"id": "SE0002",
@@ -185,7 +188,8 @@
 			"hrWaitins": "sap-icon://lateness",
 			"hrWaitingText": "HR Waiting",
 			"hrRejDec":"",
-			"vis":false
+			"vis":false,
+			"visible1":false
 		}, {
 			"id": "SE0002",
 			"ticketNo": "5676879876",
@@ -198,7 +202,8 @@
 			"hrWaitins": "sap-icon://lateness",
 			"hrWaitingText": "HR Waiting",
 			"hrRejDec":"",
-			"vis":false
+			"vis":false,
+			"visible1":false
 		}, {
 			"id": "SE0002",
 			"ticketNo": "5676879876",
@@ -211,7 +216,8 @@
 			"hrWaitins": "sap-icon://lateness",
 			"hrWaitingText": "HR Waiting",
 			"hrRejDec":"",
-			"vis":false
+			"vis":false,
+			"visible1":false
 		}],
 		"SE0003": [{
 			"id": "SE0003",
@@ -225,7 +231,8 @@
 			"hrWaitins": "sap-icon://lateness",
 			"hrWaitingText": "HR Waiting",
 			"hrRejDec":"",
-			"vis":false
+			"vis":false,
+			"visible1":false
 		}, {
 			"id": "SE0003",
 			"ticketNo": "26374546453",
@@ -238,7 +245,8 @@
 			"hrWaitins": "sap-icon://lateness",
 			"hrWaitingText": "HR Waiting",
 			"hrRejDec":"",
-			"vis":false
+			"vis":false,
+			"visible1":false
 		}, {
 			"id": "SE0003",
 			"ticketNo": "9384756382",
@@ -251,7 +259,8 @@
 			"hrWaitins": "sap-icon://lateness",
 			"hrWaitingText": "HR Waiting",
 			"hrRejDec":"",
-			"vis":false
+			"vis":false,
+			"visible1":false
 		}],
 		"SE0004": [{
 			"id": "SE0004",
@@ -265,7 +274,8 @@
 			"hrWaitins": "sap-icon://lateness",
 			"hrWaitingText": "HR Waiting",
 			"hrRejDec":"",
-			"vis":false
+			"vis":false,
+			"visible1":false
 		}, {
 			"id": "SE0004",
 			"ticketNo": "26374546453",
@@ -278,7 +288,8 @@
 			"hrWaitins": "sap-icon://lateness",
 			"hrWaitingText": "HR Waiting",
 			"hrRejDec":"",
-			"vis":false
+			"vis":false,
+			"visible1":false
 		}, {
 			"id": "SE0004",
 			"ticketNo": "9384756382",
@@ -291,7 +302,8 @@
 			"hrWaitins": "sap-icon://lateness",
 			"hrWaitingText": "HR Waiting",
 			"hrRejDec":"",
-			"vis":false
+			"vis":false,
+			"visible1":false
 		}]
 	}],
 	"Year": [{
@@ -911,14 +923,15 @@
 		"staIcon":"sap-icon://process",
 		"staText":"TL Inprocess",
 		"state":"Warning",
-		"notifSymb":""
+		"notifSymb":"",
+		"issueTime":""
 	}, {
 		"id": "SE0002",
 		"ticketNo": "8798734231",
 		"issue": "Laptop",
 		"description": "Issue with Software",
 		"status": "Issue Solved",
-		"Date": "2-11-2018",
+		"Date": "12-11-2018",
 		"Designation": "Ui Developer",
 		"name": "praveen",
 		"tlInprocess": "sap-icon://status-in-process",
@@ -929,7 +942,8 @@
 		"tlRejDec": "",
 		"visible": false,"staIcon":"sap-icon://process",
 		"staText":"TL Inprocess",
-		"state":"Warning"
+		"state":"Warning",
+		"issueTime":""
 	}, {
 		"id": "SE0002",
 		"ticketNo": "6736454657",
@@ -948,7 +962,8 @@
 		"visible": false,
 		"staIcon":"sap-icon://process",
 		"staText":"TL Inprocess",
-		"state":"Warning"
+		"state":"Warning",
+		"issueTime":""
 	}, {
 		"id": "SE0003",
 		"ticketNo": "5463234232",
@@ -967,7 +982,8 @@
 		"visible": false,
 		"staIcon":"sap-icon://process",
 		"staText":"TL Inprocess",
-		"state":"Warning"
+		"state":"Warning",
+		"issueTime":""
 	}, {
 		"id": "SE0001",
 		"ticketNo": "5436544232",
@@ -986,7 +1002,8 @@
 		"visible": false,
 		"staIcon":"sap-icon://process",
 		"staText":"TL Inprocess",
-		"state":"Warning"
+		"state":"Warning",
+		"issueTime":""
 	}, {
 		"id": "SE0003",
 		"ticketNo": "4321567232",
@@ -1005,7 +1022,8 @@
 		"visible": false,
 		"staIcon":"sap-icon://process",
 		"staText":"TL Inprocess",
-		"state":"Warning"
+		"state":"Warning",
+		"issueTime":""
 	}, {
 		"id": "SE0004",
 		"ticketNo": "9876789065",
@@ -1024,13 +1042,8 @@
 		"visible": false,
 		"staIcon":"sap-icon://process",
 		"staText":"TL Inprocess",
-		"state":"Warning"
-	}],
-	"processFlow": [{
-		"tlInprocess": "sap-icon://status-in-process",
-		"tlInprocessText": "Tl Inprocess",
-		"hrWaitins": "sap-icon://lateness",
-		"hrWaitingText": "HR Waiting"
+		"state":"Warning",
+		"issueTime":""
 	}]
 
 }

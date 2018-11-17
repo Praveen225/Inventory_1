@@ -12,6 +12,35 @@ sap.ui.define([
 			var oModel = new JSONModel(jQuery.sap.getModulePath("inventory.Inventory", "/data.json"));
 			this.getView().setModel(oModel);
 			this.getView().setModel(new JSONModel(), "jmodel");
+			
+		},
+		onBeforeRendering: function () {
+			var alldata = this.getView().getModel("data").getProperty("/allData/");
+			for (var i = 0; i < alldata.length; i++) {
+				var tNo = alldata[i].ticketNo;
+				var nId = alldata[i].id;
+				var status1 = this.getView().getModel("data").getProperty("/status/0/" + nId);
+				var issueRejDate = alldata[i].Date;
+				var issueDate = issueRejDate.slice(0, 2);
+				var issueDate1 = parseInt(issueDate);
+				var issueMonth = issueRejDate.slice(3, 5);
+				var issueMonth1 = parseInt(issueMonth);
+				var todaysDate = new Date();
+				var todaysDay = todaysDate.getDate();
+				var month = todaysDate.getMonth() + 1;
+				var preIssueDate1 = (31 - issueDate1) + todaysDay;
+				if ((todaysDay - 5 > issueDate1 && issueMonth == month) || (issueMonth == month - 1 && preIssueDate1 > 6) || (issueMonth < month -
+						1)) {
+					alldata.splice(i, 1);
+					i--;
+					for (var j = 0; j < status1.length; j++) {
+						if (status1[j].ticketNo === tNo) {
+							this.getView().getModel("data").setProperty("/status/0/" + nId + "/" + j + "/issueTime", "Minimum issue time has Expired ");
+							this.getView().getModel("data").setProperty("/status/0/" + nId + "/" + j + "/visible1", true);
+						}
+					}
+				}
+			}
 		},
 		onEventPress: function (oEvent) {
 			var twoColumn = this.getView().byId("idFlexibleColumn");

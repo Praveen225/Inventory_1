@@ -32,6 +32,7 @@ sap.ui.define([
 			/*this.getView().byId("DP2").setValue(null);*/
 		},
 		onSubmit: function (oEvent) {
+			var oldLength1= this.getView().getModel("data").getProperty("/allData/").length;
 			var empDescription = this.byId("desId").getValue();
 			var id = this.getView().byId("Id").getProperty("text");
 			var ticketNo = Math.floor((Math.random() * 10000000000) + 1);
@@ -46,11 +47,13 @@ sap.ui.define([
 			var visible = false;
 			var tlRejDec = "";
 			var vis1 = false;
+			var vis2 = false;
 			var active = "*";
 			var stIcon = "sap-icon://process";
 			var atText = "TL Inprocess";
 			var state = "Warning";
 			var symb = "";
+			var time="";
 			var today = new Date();
 			var dd = today.getDate();
 			var mm = today.getMonth() + 1; //January is 0!
@@ -83,7 +86,10 @@ sap.ui.define([
 				staIcon: stIcon,
 				staText: atText,
 				state: state,
-				notifSymb: symb
+				notifSymb: symb,
+				date1:dd,
+				issueTime:time,
+				visible1:vis2
 			};
 			var myArray = [];
 			var newData = [];
