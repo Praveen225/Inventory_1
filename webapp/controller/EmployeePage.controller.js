@@ -97,7 +97,7 @@ sap.ui.define([
 			}
 			if (myArray.length > 7) {
 				MessageToast.show("You exceed the limit of Issues raised");
-			} else if (empDescription !== "" && this.comboValue !== "") { 
+			} else if (empDescription !== "" && this.comboValue !== "") {
 				myArray.push(this.obj);
 				oModel.setProperty("/status/0/" + id, myArray);
 				myArray = oModel.getProperty("/status/0/" + id, myArray);
@@ -121,13 +121,8 @@ sap.ui.define([
 			this.reset();
 		},
 		onChange: function (oEvent) {
-				this.comboValue = oEvent.getParameters().value;
-			}
-			/*,
-					handleChange: function (oEvent) {
-						this.datePicker = oEvent.getParameters().value;
-					}*/
-			,
+			this.comboValue = oEvent.getParameters().value;
+		},
 		onLogout: function () {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("login");
@@ -137,6 +132,8 @@ sap.ui.define([
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("emp_Notification");
 			this.getView().getModel("data").setProperty("/allData/0/notifSymb", "");
+
+			
 		}
 	});
 });

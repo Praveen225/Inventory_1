@@ -10,6 +10,14 @@
       },
       "description": "SAPUI5 Resources"
     },
+     {
+      "path": "/themedesigner",
+      "target": {
+        "type": "application",
+        "name": "themedesigner"
+      },
+      "description": "Route for the theme Designer"
+    },
     {
       "path": "/test-resources",
       "target": {

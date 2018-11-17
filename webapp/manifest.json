@@ -45,7 +45,7 @@
 				"sap.ui.layout": {},
 				"sap.ui.core": {},
 				"sap.m": {},
-				"sap.tnt":{}
+				"sap.tnt": {}
 			}
 		},
 		"contentDensities": {
@@ -118,8 +118,7 @@
 					"name": "notifications",
 					"pattern": "Notifications",
 					"target": "notifications"
-				}
-				,
+				},
 				{
 					"name": "emp_Notification",
 					"pattern": "emp_Notification",
@@ -184,5 +183,9 @@
 				}
 			}
 		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
 	}
 }
