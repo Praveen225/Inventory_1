@@ -56,6 +56,8 @@ sap.ui.define([
 			var time="";
 			var today = new Date();
 			var dd = today.getDate();
+		    var posi="0";
+			var posi1="1";
 			var mm = today.getMonth() + 1; //January is 0!
 			var yyyy = today.getFullYear();
 			if (dd < 10) {
@@ -64,7 +66,7 @@ sap.ui.define([
 			if (mm < 10) {
 				mm = '0' + mm;
 			}
-			today = mm + '/' + dd + '/' + yyyy;
+			today = mm + '-' + dd + '-' + yyyy;
 			this.obj = {
 				issue: this.comboValue,
 				description: empDescription,
@@ -89,10 +91,13 @@ sap.ui.define([
 				notifSymb: symb,
 				date1:dd,
 				issueTime:time,
-				visible1:vis2
+				visible1:vis2,
+				position:posi,
+			    position1:posi1
 			};
 			var myArray = [];
-			var newData = [];
+			var newData = [],
+			    newArray=[];
 			var oModel = this.getView().getModel("data");
 			var oData = this.getView().getModel("data").oData;
 			for (var i = 0; i < oData.status[0][id].length; i++) {
@@ -118,9 +123,21 @@ sap.ui.define([
 				newData.unshift(this.obj);
 				var newLength = newData.length;
 				this.getView().getModel("data").setProperty("/allData/", newData);
+				for (var k = 0; k < oData.notifications.length; k++) {
+					newArray.push(oData.notifications[k]);
+				}
+				if(this.obj.Designation != "Team Lead"){
+				newArray.unshift(this.obj);
+				this.getView().getModel("data").setProperty("/notifications/", newArray);
+				}
+				if(this.obj.Designation === "Team Lead"){
+					this.getView().getModel("data").setProperty("/allData/0/staText/","HR Inprocess");
+					this.getView().getModel("data").setProperty("/allData/0/enable/",true);
+					
+				}
 			}
 			if (newLength > oldLength) {
-				var notNo = newLength - oldLength;
+			/*	var notNo = newLength - oldLength;*/
 				this.getView().getModel("data").setProperty("/allData/0/notifSymb", "*");
 			}
 

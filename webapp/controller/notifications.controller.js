@@ -29,7 +29,7 @@ sap.ui.define([
 				var todaysDay = todaysDate.getDate();
 				var month = todaysDate.getMonth() + 1;
 				var preIssueDate1 = (31 - issueDate1) + todaysDay;
-				if ((todaysDay - 5 > issueDate1 && issueMonth == month) || (issueMonth == month - 1 && preIssueDate1 > 6) || (issueMonth < month -
+				if ((todaysDay - 5 > issueDate1 && issueMonth1 == month) || (issueMonth1 == month - 1 && preIssueDate1 > 6) || (issueMonth1 < month -
 						1)) {
 					alldata.splice(i, 1);
 					i--;

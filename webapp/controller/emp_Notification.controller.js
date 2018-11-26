@@ -15,6 +15,34 @@ sap.ui.define([
 			this.getView().byId("emptyId").setVisible(true);
 			this.getView().byId("SimpleFormDisplay").setVisible(false);
 		},
+		onBeforeRendering: function () {
+			var notification = this.getView().getModel("data").getProperty("/notifications/");
+			for (var i = 0; i < notification.length; i++) {
+				var tNo = notification[i].ticketNo;
+				var nId = notification[i].id;
+				var status1 = this.getView().getModel("data").getProperty("/status/0/" + nId);
+				var issueRejDate = notification[i].Date;
+				var issueDate = issueRejDate.slice(0, 2);
+				var issueDate1 = parseInt(issueDate);
+				var issueMonth = issueRejDate.slice(3, 5);
+				var issueMonth1 = parseInt(issueMonth);
+				var todaysDate = new Date();
+				var todaysDay = todaysDate.getDate();
+				var month = todaysDate.getMonth() + 1;
+				var preIssueDate1 = (31 - issueDate1) + todaysDay;
+				if ((todaysDay - 5 > issueDate1 && issueMonth1 == month) || (issueMonth1 == month - 1 && preIssueDate1 > 6) || (issueMonth1 < month -
+						1)) {
+					notification.splice(i, 1);
+					i--;
+					for (var j = 0; j < status1.length; j++) {
+						if (status1[j].ticketNo === tNo) {
+							this.getView().getModel("data").setProperty("/status/0/" + nId + "/" + j + "/issueTime", "Minimum issue time has Expired ");
+							this.getView().getModel("data").setProperty("/status/0/" + nId + "/" + j + "/visible1", true);
+						}
+					}
+				}
+			}
+		},
 
 		onReject: function () {
 			var oView = this.getView();

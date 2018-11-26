@@ -146,7 +146,9 @@
 			"hrWaitingText": "HR Waiting",
 			"hrRejDec":"",
 			"vis":false,
-			"visible1":false
+			"visible1":false,
+			"position":0,
+			"position1":1
 		}, {
 			"id": "SE0001",
 			"ticketNo": "5676879876",
@@ -160,7 +162,9 @@
 			"hrWaitingText": "HR Waiting",
 			"hrRejDec":"",
 			"vis":false,
-			"visible1":false
+			"visible1":false,
+			"position":0,
+			"position1":1
 		}, {
 			"id": "SE0001",
 			"ticketNo": "8736475647",
@@ -174,7 +178,9 @@
 			"hrWaitingText": "HR Waiting",
 			"hrRejDec":"",
 			"vis":false,
-			"visible1":false
+			"visible1":false,
+			"position":0,
+			"position1":1
 		}],
 		"SE0002": [{
 			"id": "SE0002",
@@ -189,7 +195,9 @@
 			"hrWaitingText": "HR Waiting",
 			"hrRejDec":"",
 			"vis":false,
-			"visible1":false
+			"visible1":false,
+			"position":0,
+			"position1":1
 		}, {
 			"id": "SE0002",
 			"ticketNo": "5676879876",
@@ -203,7 +211,9 @@
 			"hrWaitingText": "HR Waiting",
 			"hrRejDec":"",
 			"vis":false,
-			"visible1":false
+			"visible1":false,
+			"position":0,
+			"position1":1
 		}, {
 			"id": "SE0002",
 			"ticketNo": "5676879876",
@@ -217,7 +227,9 @@
 			"hrWaitingText": "HR Waiting",
 			"hrRejDec":"",
 			"vis":false,
-			"visible1":false
+			"visible1":false,
+			"position":0,
+			"position1":1
 		}],
 		"SE0003": [{
 			"id": "SE0003",
@@ -232,7 +244,9 @@
 			"hrWaitingText": "HR Waiting",
 			"hrRejDec":"",
 			"vis":false,
-			"visible1":false
+			"visible1":false,
+			"position":0,
+			"position1":1
 		}, {
 			"id": "SE0003",
 			"ticketNo": "26374546453",
@@ -246,7 +260,9 @@
 			"hrWaitingText": "HR Waiting",
 			"hrRejDec":"",
 			"vis":false,
-			"visible1":false
+			"visible1":false,
+			"position":0,
+			"position1":1
 		}, {
 			"id": "SE0003",
 			"ticketNo": "9384756382",
@@ -260,7 +276,9 @@
 			"hrWaitingText": "HR Waiting",
 			"hrRejDec":"",
 			"vis":false,
-			"visible1":false
+			"visible1":false,
+			"position":0,
+			"position1":1
 		}],
 		"SE0004": [{
 			"id": "SE0004",
@@ -271,11 +289,13 @@
 			"Date": "02-11-2018",
 			"tlInprocess": "sap-icon://status-in-process",
 			"tlInprocessText": "Tl Inprocess",
-			"hrWaitins": "sap-icon://lateness",
-			"hrWaitingText": "HR Waiting",
+			"hrWaitins": "sap-icon://status-in-process",
+			"hrWaitingText": "HR Inprocess",
 			"hrRejDec":"",
 			"vis":false,
-			"visible1":false
+			"visible1":false,
+			"position":0,
+			"position1":0
 		}, {
 			"id": "SE0004",
 			"ticketNo": "26374546453",
@@ -285,11 +305,13 @@
 			"Date": "02-11-2018",
 			"tlInprocess": "sap-icon://status-in-process",
 			"tlInprocessText": "Tl Inprocess",
-			"hrWaitins": "sap-icon://lateness",
-			"hrWaitingText": "HR Waiting",
+			"hrWaitins": "sap-icon://status-in-process",
+			"hrWaitingText": "HR Inprocess",
 			"hrRejDec":"",
 			"vis":false,
-			"visible1":false
+			"visible1":false,
+			"position":0,
+			"position1":0
 		}, {
 			"id": "SE0004",
 			"ticketNo": "9384756382",
@@ -299,11 +321,13 @@
 			"Date": "02-11-2018",
 			"tlInprocess": "sap-icon://status-in-process",
 			"tlInprocessText": "Tl Inprocess",
-			"hrWaitins": "sap-icon://lateness",
-			"hrWaitingText": "HR Waiting",
+			"hrWaitins": "sap-icon://status-in-process",
+			"hrWaitingText": "HR Inprocess",
 			"hrRejDec":"",
 			"vis":false,
-			"visible1":false
+			"visible1":false,
+			"position":0,
+			"position1":0
 		}]
 	}],
 	"Year": [{
@@ -831,85 +855,12 @@
 		}]
 	}],
 	"notifications": [{
-		"eId": "SE0002",
-		"eName": "PRAVEEN",
-		"eIssue": "Laptop",
-		"tNo": "6544567661",
-		"eDec": "Issue with Battery",
-		"tlStatus": "InProgress",
-		"tlDec": "I thought The reason is fair enough to accept",
-		"date": "02-11-2018"
-	}, {
-		"eId": "SE0001",
-		"eName": "POORNIMA",
-		"eIssue": "Laptop",
-		"tNo": "6544567771",
-		"eDec": "Issue with Software",
-		"tlStatus": "Accecpted",
-		"tlDec": "I thought The reason is fair enough to accept",
-		"date": "05-11-2018"
-	}, {
-		"eId": "SE0002",
-		"eName": "PRAVEEN",
-		"eIssue": "Laptop",
-		"tNo": "6544567661",
-		"eDec": "Issue with Software",
-		"tlStatus": "Accepted",
-		"tlDec": "I thought The reason is fair enough to accept",
-		"date": "02-11-2018"
-	}, {
-		"eId": "SE0003",
-		"eName": "PRAVEEN",
-		"eIssue": "Internet",
-		"tNo": "6544567661",
-		"eDec": "Not sufficent internet speed",
-		"tlStatus": "InProgress",
-		"tlDec": "-----------------",
-		"date": "21-10-2018"
-	}, {
-		"eId": "SE0003",
-		"eName": "Dolly",
-		"eIssue": "Laptop",
-		"tNo": "2124567661",
-		"eDec": "System is too slow",
-		"tlStatus": "Accepted",
-		"tlDec": "I thought The reason is fair enough to accept",
-		"date": "31-10-2018"
-	}, {
-		"eId": "SE0004",
-		"eName": "PRAVEEN",
-		"eIssue": "Laptop",
-		"tNo": "7544567761",
-		"eDec": "Issue with Battery",
-		"tlStatus": "InProgress",
-		"tlDec": "I thought The reason is fair enough to accept",
-		"date": "02-11-2018"
-	}, {
-		"eId": "SE0002",
-		"eName": "PRAVEEN",
-		"eIssue": "Laptop",
-		"tNo": "2344567661",
-		"eDec": "Issue with Battery",
-		"tlStatus": "InProgress",
-		"tlDec": "I thought The reason is fair enough to accept",
-		"date": "02-11-2018"
-	}, {
-		"eId": "SE0005",
-		"eName": "PRAVEEN",
-		"eIssue": "Laptop",
-		"tNo": "2876567654",
-		"eDec": "Issue with Battery",
-		"tlStatus": "InProgress",
-		"tlDec": "------",
-		"date": "05-11-2018"
-	}],
-	"allData": [{
 		"id": "SE0001",
 		"ticketNo": "9898736374",
 		"issue": "Laptop",
 		"description": "Battery problem with laptop",
 		"status": "Issue Solved",
-		"Date": "3-11-2018",
+		"Date": "03-11-2018",
 		"Designation": "Ui Developer",
 		"name": "poornima",
 		"tlInprocess": "sap-icon://status-in-process",
@@ -950,7 +901,7 @@
 		"issue": "Laptop",
 		"description": "Issue with Software",
 		"status": "Issue Solved",
-		"Date": "10-09-2018",
+		"Date": "10-11-2018",
 		"Designation": "Ui Developer",
 		"name": "praveen",
 		"tlInprocess": "sap-icon://status-in-process",
@@ -960,9 +911,9 @@
 		"enable": false,
 		"tlRejDec": "",
 		"visible": false,
-		"staIcon":"sap-icon://process",
-		"staText":"TL Inprocess",
-		"state":"Warning",
+		"staIcon":"sap-icon://decline",
+		"staText":"HR Rejected",
+		"state":"Error",
 		"issueTime":""
 	}, {
 		"id": "SE0003",
@@ -970,7 +921,7 @@
 		"issue": "Server",
 		"description": "Not working from past 2 days",
 		"status": "Inprocess",
-		"Date": "5-10-2018",
+		"Date": "22-11-2018",
 		"Designation": "Ui Developer",
 		"name": "Dolly",
 		"tlInprocess": "sap-icon://status-in-process",
@@ -980,9 +931,9 @@
 		"enable": false,
 		"tlRejDec": "",
 		"visible": false,
-		"staIcon":"sap-icon://process",
-		"staText":"TL Inprocess",
-		"state":"Warning",
+		"staIcon":"sap-icon://decline",
+		"staText":"HR Rejected",
+		"state":"Error",
 		"issueTime":""
 	}, {
 		"id": "SE0001",
@@ -990,7 +941,7 @@
 		"issue": "Server",
 		"description": "Not working from past 2 days",
 		"status": "Inprocess",
-		"Date": "14-11-2018",
+		"Date": "24-11-2018",
 		"Designation": "Ui Developer",
 		"name": "poornima",
 		"tlInprocess": "sap-icon://status-in-process",
@@ -1000,9 +951,9 @@
 		"enable": false,
 		"tlRejDec": "",
 		"visible": false,
-		"staIcon":"sap-icon://process",
-		"staText":"TL Inprocess",
-		"state":"Warning",
+		"staIcon":"sap-icon://accept",
+		"staText":"TL Accepted",
+		"state":"Success",
 		"issueTime":""
 	}, {
 		"id": "SE0003",
@@ -1021,7 +972,7 @@
 		"tlRejDec": "",
 		"visible": false,
 		"staIcon":"sap-icon://process",
-		"staText":"TL Inprocess",
+		"staText":"HR Inprocess",
 		"state":"Warning",
 		"issueTime":""
 	}, {
@@ -1041,7 +992,149 @@
 		"tlRejDec": "",
 		"visible": false,
 		"staIcon":"sap-icon://process",
+		"staText":"HR Inprocess",
+		"state":"Warning",
+		"issueTime":""
+	}],
+	"allData": [{
+		"id": "SE0001",
+		"ticketNo": "9898736374",
+		"issue": "Laptop",
+		"description": "Battery problem with laptop",
+		"status": "Issue Solved",
+		"Date": "03-11-2018",
+		"Designation": "Ui Developer",
+		"name": "poornima",
+		"tlInprocess": "sap-icon://status-in-process",
+		"tlInprocessText": "Tl Inprocess",
+		"hrWaitins": "sap-icon://lateness",
+		"hrWaitingText": "HR Waiting",
+		"enable": false,
+		"tlRejDec": "",
+		"visible": false,
+		"no":"*",
+		"staIcon":"sap-icon://process",
 		"staText":"TL Inprocess",
+		"state":"Warning",
+		"notifSymb":"",
+		"issueTime":""
+	}, {
+		"id": "SE0002",
+		"ticketNo": "8798734231",
+		"issue": "Laptop",
+		"description": "Issue with Software",
+		"status": "Issue Solved",
+		"Date": "12-11-2018",
+		"Designation": "Ui Developer",
+		"name": "praveen",
+		"tlInprocess": "sap-icon://status-in-process",
+		"tlInprocessText": "Tl Inprocess",
+		"hrWaitins": "sap-icon://lateness",
+		"hrWaitingText": "HR Waiting",
+		"enable": false,
+		"tlRejDec": "",
+		"visible": false,"staIcon":"sap-icon://process",
+		"staText":"TL Inprocess",
+		"state":"Warning",
+		"issueTime":""
+	}, {
+		"id": "SE0002",
+		"ticketNo": "6736454657",
+		"issue": "Laptop",
+		"description": "Issue with Software",
+		"status": "Issue Solved",
+		"Date": "10-11-2018",
+		"Designation": "Ui Developer",
+		"name": "praveen",
+		"tlInprocess": "sap-icon://status-in-process",
+		"tlInprocessText": "Tl Inprocess",
+		"hrWaitins": "sap-icon://lateness",
+		"hrWaitingText": "HR Waiting",
+		"enable": false,
+		"tlRejDec": "",
+		"visible": false,
+		"staIcon":"sap-icon://decline",
+		"staText":"HR Rejected",
+		"state":"Error",
+		"issueTime":""
+	}, {
+		"id": "SE0003",
+		"ticketNo": "5463234232",
+		"issue": "Server",
+		"description": "Not working from past 2 days",
+		"status": "Inprocess",
+		"Date": "22-11-2018",
+		"Designation": "Ui Developer",
+		"name": "Dolly",
+		"tlInprocess": "sap-icon://status-in-process",
+		"tlInprocessText": "Tl Inprocess",
+		"hrWaitins": "sap-icon://lateness",
+		"hrWaitingText": "HR Waiting",
+		"enable": false,
+		"tlRejDec": "",
+		"visible": false,
+		"staIcon":"sap-icon://decline",
+		"staText":"HR Rejected",
+		"state":"Error",
+		"issueTime":""
+	}, {
+		"id": "SE0001",
+		"ticketNo": "5436544232",
+		"issue": "Server",
+		"description": "Not working from past 2 days",
+		"status": "Inprocess",
+		"Date": "24-11-2018",
+		"Designation": "Ui Developer",
+		"name": "poornima",
+		"tlInprocess": "sap-icon://status-in-process",
+		"tlInprocessText": "Tl Inprocess",
+		"hrWaitins": "sap-icon://lateness",
+		"hrWaitingText": "HR Waiting",
+		"enable": false,
+		"tlRejDec": "",
+		"visible": false,
+		"staIcon":"sap-icon://accept",
+		"staText":"TL Accepted",
+		"state":"Success",
+		"issueTime":""
+	}, {
+		"id": "SE0003",
+		"ticketNo": "4321567232",
+		"issue": "computer",
+		"description": "Issue with Software",
+		"status": "Inprocess",
+		"Date": "10-10-2018",
+		"Designation": "Ui Developer",
+		"name": "dolly",
+		"tlInprocess": "sap-icon://status-in-process",
+		"tlInprocessText": "Tl Inprocess",
+		"hrWaitins": "sap-icon://lateness",
+		"hrWaitingText": "HR Waiting",
+		"enable": false,
+		"tlRejDec": "",
+		"visible": false,
+		"staIcon":"sap-icon://process",
+		"staText":"HR Inprocess",
+		"state":"Warning",
+		"issueTime":""
+	}, {
+		"id": "SE0004",
+		"ticketNo": "9876789065",
+		"issue": "server",
+		"description": "Not working",
+		"status": "Inprocess",
+		"Date": "10-09-2018",
+		"Designation": "Team Lead",
+		"name": "raghu",
+		"tlInprocess": "sap-icon://status-in-process",
+		"tlInprocessText": "Tl Inprocess",
+		"hrWaitins": "sap-icon://lateness",
+		"hrWaitingText": "HR Waiting",
+		"enable": false,
+		"tlRejDec": "",
+		"visible": false,
+		"staIcon":"sap-icon://process",
+		"staText":"HR Inprocess",
 		"state":"Warning",
 		"issueTime":""
 	}]

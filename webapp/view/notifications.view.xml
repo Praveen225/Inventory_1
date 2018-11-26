@@ -23,8 +23,8 @@
 		<f:beginColumnPages>
 			<Page showHeader="false" showFooter="false" id="beginPage">
 				<content>
-					<List items="{data>/allData}" headerText="Employee Names" id="notfList" includeItemInSelection="true" itemPress="onEventPress"
-						mode="SingleSelectMaster">
+					<List items="{ path : 'data>/allData', sorter : { path : 'staText',group: true,	descending: true}, groupHeaderFactory: '.getGroupHeader'}"
+						headerText="Employee Names" id="notfList" includeItemInSelection="true" itemPress="onEventPress" mode="SingleSelectMaster">
 						<headerToolbar>
 							<Toolbar>
 								<ToolbarSpacer/>
@@ -35,7 +35,7 @@
 							<ObjectListItem title="{data>issue}" number="Ticket No:" numberUnit="{data>ticketNo}" type="Navigation">
 								<firstStatus>
 									<ObjectStatus icon="{data>staIcon}" text="{data>staText}" state="{data>state}"/>
-						      </firstStatus>
+								</firstStatus>
 								<attributes>
 									<ObjectAttribute text="{data>id}"/>
 									<ObjectAttribute text="{data>Date}"/>
@@ -53,7 +53,7 @@
 			<Page title="Notification Details">
 				<Toolbar>
 					<ToolbarSpacer/>
-					<Button icon="sap-icon://decline"  type="Transparent" press="onClosingDetail"></Button>
+					<Button icon="sap-icon://decline" type="Transparent" press="onClosingDetail"></Button>
 					<!--<core:Icon src="sap-icon://decline" class="sapUiMediumMargin"/>-->
 				</Toolbar>
 				<content>

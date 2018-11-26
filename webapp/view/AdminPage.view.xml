@@ -42,7 +42,7 @@
 					<o:ObjectPageSection showTitle="false">
 						<o:ObjectPageSubSection >
 							<o:blocks>
-								<layout:BlockLayout background="Light">
+								<!--<layout:BlockLayout background="Light">
 									<layout:BlockLayoutRow rowColorSet="ColorSet1">
 										<layout:BlockLayoutCell >
 											<layout:VerticalLayout class="sapUiTinyMargin">
@@ -79,11 +79,11 @@
 											</layout:VerticalLayout>
 										</layout:BlockLayoutCell>
 									</layout:BlockLayoutRow>
-								</layout:BlockLayout>
-								<!--	<GenericTile class="sapUiTinyMargin" header="{i18n>tile1}" subheader="" press="equipment"></GenericTile>
+								</layout:BlockLayout>-->
+									<GenericTile class="sapUiTinyMargin" header="{i18n>tile1}" subheader="" press="equipment"></GenericTile>
 								<GenericTile class="sapUiTinyMargin" header="{i18n>tile2}" subheader="" press="notifications"></GenericTile>
 								<GenericTile class="sapUiTinyMargin" header="{i18n>tile3}" subheader="" press="issueDetails"></GenericTile>
-								<GenericTile class="sapUiTinyMargin" header="{i18n>tile4}" subheader="" press="onissueStatics"></GenericTile>-->
+								<GenericTile class="sapUiTinyMargin" header="{i18n>tile4}" subheader="" press="onissueStatics"></GenericTile>
 							</o:blocks>
 						</o:ObjectPageSubSection>
 					</o:ObjectPageSection>
@@ -92,7 +92,7 @@
 		</content>
 		<footer>
 			<Toolbar class="idAdminFooter">
-				<Button icon="sap-icon://bell" type="Transparent" text="{data>/allData/0/notifSymb}" class="sapUiTinyMargin" press="onNotifClick"/>
+				<Button icon="sap-icon://bell" type="Transparent" text="{data>/allData/0/notifSymb}" class="sapUiTinyMargin" press="onNotifClick" visible="false"/>
 			</Toolbar>
 		</footer>
 	</Page>
